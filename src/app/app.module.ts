@@ -9,10 +9,10 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgWizardModule, NgWizardConfig, THEME } from 'ng-wizard';
-
+import { AccountRoutingModule } from './../account/account-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutRoutingModule } from './../layout/layout-routing.module';
-
+import { AccountModule } from 'src/account/account.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './../layout/navbar/navbar.component';
 import { FooterComponent } from './../layout/footer/footer.component';
@@ -39,8 +39,9 @@ const ngWizardConfig: NgWizardConfig = {
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    AccountRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    AccountModule,
     MatToolbarModule,
     MatBadgeModule,
     ToastrModule.forRoot(),
