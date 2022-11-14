@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { AccountRoutingModule } from './account-routing.module';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -12,12 +12,13 @@ import { LoginComponent } from './login/login.component';
   declarations: [
     HomeComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    AboutComponent
    
   ],
   imports: [
     CommonModule,
-    AccountRoutingModule,
+   
     FormsModule,
     ReactiveFormsModule
     

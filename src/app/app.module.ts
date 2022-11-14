@@ -9,7 +9,8 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgWizardModule, NgWizardConfig, THEME } from 'ng-wizard';
-
+import { AccountModule } from 'src/account/account.module';
+import { AccountRoutingModule } from 'src/account/account-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutRoutingModule } from './../layout/layout-routing.module';
 
@@ -18,7 +19,7 @@ import { NavbarComponent } from './../layout/navbar/navbar.component';
 import { FooterComponent } from './../layout/footer/footer.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 const ngWizardConfig: NgWizardConfig = {
   theme: THEME.default
@@ -46,7 +47,10 @@ const ngWizardConfig: NgWizardConfig = {
     ToastrModule.forRoot(),
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
     NgWizardModule.forRoot(ngWizardConfig),
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    MatProgressBarModule,
+    AccountModule,
+    AccountRoutingModule
     ],
   providers: [],
   bootstrap: [AppComponent]
