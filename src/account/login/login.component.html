@@ -1,82 +1,86 @@
 <section class="login ">
-    <div class="container " >
-        <div class="row d-flex justify-content-center align-items-center " >
+    <div class="container ">
+        <div class="row d-flex justify-content-center align-items-center ">
             <div class="col mt-5 my-5">
-                    <div class="row g-0" >
-                        <div class=" col-sm-12 col-md-12 col-lg-6 col-xl-6  color  ">
-                            <h3 class="text-center text-white align-items-center fw-bold"
-                                style="margin-top:230px ;">WELCOME BACK!</h3>
-                            <p class="text-center text-white ">To Keep connected with us
-                                please login<br> with ur personal info </p>
-                            <button type="Submit" id="hs2" class="btn btn-outline-light text-center btn-lg  hp hs hs1 hs2 hs4 hs3"
-                                style=" border-radius: 25px;width: 200px;">Sign In</button>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 vet" >
-                            <div class=" p-md-5 text-black">
-                                <h3 class="mb-4 text-uppercase para text-center fw-bold mt-5">CREATE ACCOUNT</h3>
-                                <div class="text-center">
-                                    <a class=" mx-2" href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C550525805424%7Cb%7Cfesbook%20com%7C&placement=&creative=550525805424&keyword=fesbook%20com&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696221352%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-298741614134%26loc_physical_ms%3D1007815%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQiApb2bBhDYARIsAChHC9vtbo6gmlCFi-2rDJI0Z-n_VBSOsDtb43oCSof6Gqw8htM8Y7R9EFQaAm1DEALw_wcB">
-                                        <img src="../../assets/Facebook_f_logo_(2019).svg.webp" alt="face" style="width:30px">
-                                    </a>
-                                    <a class="mx-2 " href="https://www.google.com/search?q=google+link&sxsrf=ALiCzsbLrgHbD0RxljLb0JLehTUbJ0YV6g%3A1668241136742&ei=8FZvY_vsLLGWseMPhKSUsAI&ved=0ahUKEwj7pOvCmqj7AhUxS2wGHQQSBSYQ4dUDCA8&uact=5&oq=google+link&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIECCMQJzIQCAAQgAQQhwIQsQMQgwEQFDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBAgAEEM6CggAEEcQ1gQQsAM6BwgAELADEEM6DQgAEOQCENYEELADGAE6EgguEMcBENEDEMgDELADEEMYAjoHCAAQgAQQCkoECE0YAUoECEEYAEoECEYYAVDoBliBFWC5GGgBcAF4AIABaogB0QGSAQMwLjKYAQCgAQHIARHAAQHaAQYIARABGAnaAQYIAhABGAg&sclient=gws-wiz-serp" >
-                                        <img src="../../assets/6b60d27b-c044-4e11-be81-eafbf415b2b3.jpg" alt="face" style="width:30px ; background-color: white;" >
-                                    </a>
-                                    <a class=" mx-2" href="https://www.linkedin.com/login">
-                                        <img src="../../assets/600px-LinkedIn_logo_initials.png" alt="face" style="width: 30px;">
-                                    </a>
-                                </div>
-                                <form class="mx-1 mx-md-4 mt-5" [formGroup]="loginForm" (ngSubmit)="submit()">
-                                    <div class="d-flex flex-row align-items-center mb-4">
-                                        <div class="form-outline flex-fill mb-0">
-                                            <span><img src="../../assets/envelope-regular-24 (1).png"></span>
-                                            <label class="form-label" style="color:rgb(107, 106, 106)"><b>Email
-                                                    Id:</b><sup id="colo">*</sup></label>
-                                            <div class="in_single_input input ">
-                                                <input type="email" formControlName="email" class="form-control"
-                                                    placeholder="Enter your mailid" required
-                                                    [ngClass]="{ 'is-invalid': Submitted && f['email'].errors || f['email'].touched&& f['email'].errors} " />
-                                                <div *ngIf="Submitted && f['email'].errors|| f['email'].touched&& f['email'].errors"
-                                                    class="invalid-feedback">
-                                                    <div *ngIf="f['email'].errors['required']"> Phone is required
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center mb-4">
-                                        <div class="form-outline flex-fill mb-0">
-                                            <span><img src="../../assets/envelope-regular-24 (1).png"></span>
-                                            <label class="form-label"
-                                                style="color:rgb(107, 106, 106)"><b>Password:</b><sup
-                                                    id="colo">*</sup></label>
-                                            <div class="in_single_input input ">
-                                                <input type="password" formControlName="password" class="form-control"
-                                                    placeholder="Enter your password" required
-                                                    [ngClass]="{ 'is-invalid': Submitted && f['password'].errors || f['password'].touched&& f['password'].errors} " />
-                                                <div *ngIf="Submitted && f['password'].errors|| f['password'].touched&& f['password'].errors"
-                                                    class="invalid-feedback">
-                                                    <div *ngIf="f['password'].errors['required']"> Password is required
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-center ">
-                                        <button type="submit" class="btn btn-color d-grid gap-2 col-6 text-white btn-lg"
-                                            style="border-radius: 25px;">Login</button>
-                                    </div>
-                                    <div>
-                                        <h6 class=" mb-5 mt-3 text-center">Don't have an account? <button routerLink="/signup"
-                                                style="border: none; background-color: white;"
-                                                class="text-primary ">Signup</button></h6>
-                                    </div>
-                                </form>
+                <div class="row g-0">
+                    <div class=" col-sm-12 col-md-12 col-lg-6 col-xl-6  color  ">
+                        <h3 class="text-center text-white align-items-center fw-bold" style="margin-top:230px ;">WELCOME
+                            BACK!</h3>
+                        <p class="text-center text-white ">To Keep connected with us
+                            please login<br> with ur personal info </p>
+                        <button type="Submit" id="hs2"
+                            class="btn btn-outline-light text-center btn-lg  hp hs hs1 hs2 hs4 hs3"
+                            style=" border-radius: 25px;width: 200px;">Sign In</button>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 vet">
+                        <div class=" p-md-5 text-black">
+                            <h3 class="mb-4 text-uppercase para text-center fw-bold mt-5">CREATE ACCOUNT</h3>
+                            <div class="text-center">
+                                <a class=" mx-2"
+                                    href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C550525805424%7Cb%7Cfesbook%20com%7C&placement=&creative=550525805424&keyword=fesbook%20com&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696221352%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-298741614134%26loc_physical_ms%3D1007815%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQiApb2bBhDYARIsAChHC9vtbo6gmlCFi-2rDJI0Z-n_VBSOsDtb43oCSof6Gqw8htM8Y7R9EFQaAm1DEALw_wcB">
+                                    <img src="../../assets/Facebook_f_logo_(2019).svg.webp" alt="face"
+                                        style="width:30px">
+                                </a>
+                                <a class="mx-2 "
+                                    href="https://www.google.com/search?q=google+link&sxsrf=ALiCzsbLrgHbD0RxljLb0JLehTUbJ0YV6g%3A1668241136742&ei=8FZvY_vsLLGWseMPhKSUsAI&ved=0ahUKEwj7pOvCmqj7AhUxS2wGHQQSBSYQ4dUDCA8&uact=5&oq=google+link&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIECCMQJzIQCAAQgAQQhwIQsQMQgwEQFDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBAgAEEM6CggAEEcQ1gQQsAM6BwgAELADEEM6DQgAEOQCENYEELADGAE6EgguEMcBENEDEMgDELADEEMYAjoHCAAQgAQQCkoECE0YAUoECEEYAEoECEYYAVDoBliBFWC5GGgBcAF4AIABaogB0QGSAQMwLjKYAQCgAQHIARHAAQHaAQYIARABGAnaAQYIAhABGAg&sclient=gws-wiz-serp">
+                                    <img src="../../assets/6b60d27b-c044-4e11-be81-eafbf415b2b3.jpg" alt="face"
+                                        style="width:30px ; background-color: white;">
+                                </a>
+                                <a class=" mx-2" href="https://www.linkedin.com/login">
+                                    <img src="../../assets/600px-LinkedIn_logo_initials.png" alt="face"
+                                        style="width: 30px;">
+                                </a>
                             </div>
+                            <form class="mx-1 mx-md-4 mt-5" [formGroup]="loginForm" (ngSubmit)="submit()">
+                                <div class="d-flex flex-row align-items-center mb-4">
+                                    <div class="form-outline flex-fill mb-0">
+                                        <span><img src="../../assets/envelope-regular-24 (1).png"></span>
+                                        <label class="form-label" style="color:rgb(107, 106, 106)"><b>Email
+                                                Id:</b><sup id="colo">*</sup></label>
+                                        <div class="in_single_input input ">
+                                            <input type="email" formControlName="email" class="form-control"
+                                                placeholder="Enter your mailid" required
+                                                [ngClass]="{ 'is-invalid': Submitted && f['email'].errors || f['email'].touched&& f['email'].errors} " />
+                                            <div *ngIf="Submitted && f['email'].errors|| f['email'].touched&& f['email'].errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f['email'].errors['required']"> Phone is required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-center mb-4">
+                                    <div class="form-outline flex-fill mb-0">
+                                        <span><img src="../../assets/envelope-regular-24 (1).png"></span>
+                                        <label class="form-label" style="color:rgb(107, 106, 106)"><b>Password:</b><sup
+                                                id="colo">*</sup></label>
+                                        <div class="in_single_input input ">
+                                            <input type="password" formControlName="password" class="form-control"
+                                                placeholder="Enter your password" required
+                                                [ngClass]="{ 'is-invalid': Submitted && f['password'].errors || f['password'].touched&& f['password'].errors} " />
+                                            <div *ngIf="Submitted && f['password'].errors|| f['password'].touched&& f['password'].errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f['password'].errors['required']"> Password is required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center ">
+                                    <button type="submit" class="btn btn-color d-grid gap-2 col-6 text-white btn-lg"
+                                        style="border-radius: 25px;">Login</button>
+                                </div>
+                                <div>
+                                    <h6 class=" mb-5 mt-3 text-center">Don't have an account? <button
+                                            routerLink="/signup" style="border: none; background-color: white;"
+                                            class="text-primary ">Signup</button></h6>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-       
-    </div>
+        </div>
 
+    </div>
 </section>
