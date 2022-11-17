@@ -18,7 +18,7 @@ import { NavbarComponent } from './../layout/navbar/navbar.component';
 import { FooterComponent } from './../layout/footer/footer.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
-
+import { AccountModule } from 'src/account/account.module';
 
 const ngWizardConfig: NgWizardConfig = {
   theme: THEME.default
@@ -46,7 +46,8 @@ const ngWizardConfig: NgWizardConfig = {
     ToastrModule.forRoot(),
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
     NgWizardModule.forRoot(ngWizardConfig),
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    AccountModule
     ],
   providers: [],
   bootstrap: [AppComponent]
