@@ -15,8 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule, IgxCalloutLayerModule, IgxDataChartInteractivityModule, IgxDataChartAnnotationModule, IgxNumberAbbreviatorModule, IgxDataChartCategoryCoreModule } from "igniteui-angular-charts";
-
+import { StudentInfoModule } from './student-info/student-info.module';
 
 
 
@@ -40,14 +39,7 @@ import { IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule, Ig
     MatInputModule,
     MatSelectModule,
     FormsModule,
-    IgxDataChartCoreModule,
-    IgxDataChartCategoryModule,
-    IgxDataChartCategoryCoreModule,
-    IgxLegendModule,
-    IgxCalloutLayerModule,
-    IgxDataChartInteractivityModule,
-    IgxDataChartAnnotationModule,
-    IgxNumberAbbreviatorModule,
+    StudentInfoModule,
     BrowserAnimationsModule
   ]
 })

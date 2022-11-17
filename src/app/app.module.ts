@@ -16,7 +16,6 @@ import { LayoutRoutingModule } from './../layout/layout-routing.module';
 import { PagesModule } from './../app/pages/pages.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule, IgxCalloutLayerModule, IgxDataChartInteractivityModule, IgxDataChartAnnotationModule, IgxNumberAbbreviatorModule, IgxDataChartCategoryCoreModule } from "igniteui-angular-charts";
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -55,14 +54,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatProgressBarModule,
     AccountRoutingModule,
     PagesModule,
-    IgxDataChartCoreModule,
-    IgxDataChartCategoryModule,
-    IgxDataChartCategoryCoreModule,
-    IgxLegendModule,
-    IgxCalloutLayerModule,
-    IgxDataChartInteractivityModule,
-    IgxDataChartAnnotationModule,
-    IgxNumberAbbreviatorModule,
+   
     
     ],
   providers: [],
