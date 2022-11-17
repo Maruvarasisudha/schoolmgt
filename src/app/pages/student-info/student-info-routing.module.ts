@@ -5,7 +5,6 @@ const routes: Routes = [
   {
     path: "student-info",
     children: [
-      // { path: "dashboard", component: DashboardComponent }
     ]
   }
 ];
