@@ -4,15 +4,17 @@ import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
- 
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'home',component:HomeComponent},
+  {path:'account',component:DashboardComponent,
+ children:[{path:'home',component:HomeComponent},
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
-  {path:'about',component:AboutComponent}
- 
+  {path:'about',component:AboutComponent},
+]
+  }
 ];
 
 @NgModule({

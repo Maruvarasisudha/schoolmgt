@@ -13,24 +13,28 @@ import { AccountModule } from 'src/account/account.module';
 import { AccountRoutingModule } from 'src/account/account-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutRoutingModule } from './../layout/layout-routing.module';
+import { PagesModule } from './../app/pages/pages.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './../layout/navbar/navbar.component';
-import { FooterComponent } from './../layout/footer/footer.component';
+import { IgxDataChartCoreModule, IgxDataChartCategoryModule, IgxLegendModule, IgxCalloutLayerModule, IgxDataChartInteractivityModule, IgxDataChartAnnotationModule, IgxNumberAbbreviatorModule, IgxDataChartCategoryCoreModule } from "igniteui-angular-charts";
+
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
-const ngWizardConfig: NgWizardConfig = {
-  theme: THEME.default
-};
+
+
+// const ngWizardConfig: NgWizardConfig = {
+//   theme: THEME.default
+// };
 
 @NgModule({
   declarations: [
     AppComponent,
    
-    NavbarComponent,
-    FooterComponent,
+   
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -46,11 +50,20 @@ const ngWizardConfig: NgWizardConfig = {
     MatBadgeModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
-    NgWizardModule.forRoot(ngWizardConfig),
+    // NgWizardModule.forRoot(ngWizardConfig),
     LayoutRoutingModule,
     MatProgressBarModule,
-    AccountModule,
-    AccountRoutingModule
+    AccountRoutingModule,
+    PagesModule,
+    IgxDataChartCoreModule,
+    IgxDataChartCategoryModule,
+    IgxDataChartCategoryCoreModule,
+    IgxLegendModule,
+    IgxCalloutLayerModule,
+    IgxDataChartInteractivityModule,
+    IgxDataChartAnnotationModule,
+    IgxNumberAbbreviatorModule,
+    
     ],
   providers: [],
   bootstrap: [AppComponent]

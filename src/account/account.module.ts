@@ -5,24 +5,28 @@ import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
-
-
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LayoutRoutingModule } from './../layout/layout-routing.module';
+import { LayoutModule } from 'src/layout/layout.module';
+import { NavbarComponent } from 'src/layout/navbar/navbar.component';
+import { FooterComponent } from 'src/layout/footer/footer.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     SignupComponent,
     LoginComponent,
-    AboutComponent
-   
+    AboutComponent,
+    DashboardComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
-   
+    LayoutRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-    
-    
+    ReactiveFormsModule,
+
   ]
 })
 export class AccountModule { }
