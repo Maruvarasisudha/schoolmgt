@@ -7,9 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutRoutingModule } from './../layout/layout-routing.module';
-import { LayoutModule } from 'src/layout/layout.module';
 import { NavbarComponent } from 'src/layout/navbar/navbar.component';
 import { FooterComponent } from 'src/layout/footer/footer.component';
+import { AccountRoutingModule } from './account-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { FooterComponent } from 'src/layout/footer/footer.component';
   ],
   imports: [
     CommonModule,
-    LayoutRoutingModule,
+    AccountRoutingModule,
     FormsModule,
     ReactiveFormsModule,
 

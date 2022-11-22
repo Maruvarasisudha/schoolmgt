@@ -1,0 +1,71 @@
+* {
+    
+    font-family: 'Poppins', sans-serif;
+  }
+  .card {
+    border: none;
+    
+   }
+   #last{
+    
+    font-size:14px;
+    color: rgb(130, 43, 223);
+   }
+   .last{
+    
+    color: rgb(87, 42, 159);
+    font-size: 20px;
+   }
+   .list{
+    border: 2px ;
+    
+   }
+   .last1{
+    
+    background-image:linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+    margin-right: -20px;
+   }
+
+   .last3{
+    
+    background-image:linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+   
+   }
+   .last2{
+    font-size:17px;
+    color: rgb(87, 42, 159);
+   }
+   .mat-form-field{
+    width:100%;
+   }
+   table {
+    width: 100%;
+  }
+  
+  .data-table {
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .icon {
+    cursor: pointer;
+  }
+  
+  .icons {
+    color: red;
+  }
+  
+  #color {
+    color: black;
+  
+  }
+  
+  .butt {
+    border: none;
+    background-color: white
+  }
+  
+  .table-edit-icon {
+    font-size: 17px;
+    margin-bottom: -7px;
+  }
