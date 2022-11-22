@@ -4,6 +4,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { ContactComponent } from './contact/contact.component';
 import { JwtInterceptor } from './interceptor/jwt.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { ErrorInterceptor } from './interceptor/error.interceptor';
@@ -19,6 +20,7 @@ import { AccountRoutingModule } from './account-routing.module';
     HomeComponent,
     SignupComponent,
     LoginComponent,
+    ContactComponent,
     AboutComponent,
     DashboardComponent,
     NavbarComponent,

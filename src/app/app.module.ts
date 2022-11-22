@@ -8,36 +8,24 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { NgWizardModule, NgWizardConfig, THEME } from 'ng-wizard';
-// import { AccountRoutingModule } from './../account/account-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
-import { HttpClientModule } from '@angular/common/http';
-import { StudentInfoModule } from './pages/student-info/student-info.module';
-import { AccountModule } from 'src/account/account.module';
-
-// import { NavbarComponent } from './../layout/navbar/navbar.component';
-import { FooterComponent } from './../layout/footer/footer.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatBadgeModule} from '@angular/material/badge';
-import { PagesModule } from './pages/pages.module';
-import { AccountRoutingModule } from 'src/account/account-routing.module';
 import { LayoutRoutingModule } from './../layout/layout-routing.module';
+import { PagesModule } from './../app/pages/pages.module';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from './material/material.module';
+import { AccountModule } from 'src/account/account.module';
+import { FooterComponent } from './../layout/footer/footer.component';
+import { AccountRoutingModule } from 'src/account/account-routing.module';
+import { StudentInfoModule } from './pages/student-info/student-info.module';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 
 
-// const ngWizardConfig: NgWizardConfig = {
-//   theme: THEME.default
-// };
-
 @NgModule({
   declarations: [
+    AppComponent, 
     AppComponent,
    
-    // NavbarComponent,
-    // FooterComponent,
-  
   ],
   imports: [
     BrowserModule,
@@ -48,20 +36,17 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    // AccountRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AccountModule,
-    MatToolbarModule,
-    MatBadgeModule,
-    MatIconModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
-    // NgWizardModule.forRoot(ngWizardConfig),
     LayoutRoutingModule,
-    MatProgressBarModule,
-    AccountRoutingModule,
     AccountModule,
-   
+    AccountRoutingModule,
+    PagesModule,
+    MaterialModule,
+    AccountModule,
     StudentInfoModule
     
     ],
