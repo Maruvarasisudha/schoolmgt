@@ -4,9 +4,7 @@
 }
 .color{
     background-color: rgb(46, 194, 174);
-    font-family:Arial, Helvetica, sans-serif ;
-    
-  
+    font-family:Arial, Helvetica, sans-serif ;  
 }
 .vet{
     background-color: white;
@@ -39,10 +37,7 @@
 .example-container .mat-form-field + .mat-form-field {
     margin-left: 8px;
   }
-  #colo{
-    color:rgb(206, 25, 25);
-    font-size:larger;
-  }
+  
   @media (max-width:576px){
     
     .hp{
@@ -50,14 +45,14 @@
         margin-left: 200px;
     }
   }
- 
+  
   @media(min-width:1024px){
     #hs2{
        margin-left: 165px;
     }
   }
   @media(min-width:320px){
-    .hs3{
+    .hs31{
        margin-left: 40px;
     }
   }
