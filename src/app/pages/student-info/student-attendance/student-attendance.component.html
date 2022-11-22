@@ -1,0 +1,73 @@
+<div class="container-fluid ">
+  <div class="card mx-5 mt-4" style="border: none; border-radius: 10px; box-shadow: 1px 1px 10px #888888;">
+    <div class="row justify-content-between mx-1 p-1 ">
+      <div class="col-lg-2  ">
+        <h6 style="color:rgb(87, 42, 159)"><b>STUDENTATTENDANCE</b></h6>
+      </div>
+      <div class="col-lg-13 my-auto mt-2 text-end">
+        <a class="mx-2" style="text-decoration:none;color: rgb(87, 42, 159);" href="#">Dashboard </a>|
+        <a class="mx-2" style="text-decoration:none;color: rgb(87, 42, 159)" href="#">Student Info </a>|
+        <a style="text-decoration:none;color: rgb(87, 42, 159)" href="#">Student Attendance </a>
+      </div>
+    </div>
+  </div>
+</div><br>
+<div class="row justify-content-between mx-3 p-2 ">
+
+  <div class="col-lg-2 text-end ">
+    <h6 style="color:rgb(87, 42, 159)">SELECTCRITERIA</h6>
+  </div>
+  <div class="col-lg-3 mx-4 text-end ">
+
+    <button type="button " class="btn last1 text-white badge btn px-2 py-2 rounded-pill">
+
+      +IMPORT ATTENDANCE
+
+    </button>
+
+  </div>
+
+  <div class="container-fluid ">
+
+    <div class="card mx-3 mt-4" style="border: none; border-radius: 10px; box-shadow: 1px 1px 10px #888888;">
+
+      <div class="container my-4">
+
+        <div class="row mx-5 my-5">
+          <div class="col-lg-4 col-md-10">
+            <mat-form-field appearance="standard">
+              <mat-label>Select Class*</mat-label>
+              <mat-select>
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let class of classes" [value]="class">{{class}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="standard">
+              <mat-label>Select section*</mat-label>
+              <mat-select>
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let section of sections" [value]="section">{{section}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="standard">
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle style="margin-left:140px ; " matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-15 mx-4 px-5 text-end ">
+
+            <button type="button" class="btn last1 text-white badge btn px-2 py-2 rounded-pill">
+              <i class='bx bx-search'></i>
+
+              SEARCH
+            </button>
+
+          </div>

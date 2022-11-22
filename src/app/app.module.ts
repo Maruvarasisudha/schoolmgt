@@ -20,6 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatButtonModule} from '@angular/material/button';
+
+
 
 
 
@@ -30,10 +34,11 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 @NgModule({
   declarations: [
     AppComponent,
-   
-   
-    
-    
+
+
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -54,8 +59,11 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatProgressBarModule,
     AccountRoutingModule,
     PagesModule,
-   
-    
+    MatDatepickerModule,
+    MatButtonModule
+
+
+
     ],
   providers: [],
   bootstrap: [AppComponent]

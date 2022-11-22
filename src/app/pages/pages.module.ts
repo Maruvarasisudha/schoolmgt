@@ -16,13 +16,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentInfoModule } from './student-info/student-info.module';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 
 @NgModule({
   declarations: [
-   
-  
+
+
     DashboardComponent
   ],
   imports: [
@@ -40,7 +42,8 @@ import { StudentInfoModule } from './student-info/student-info.module';
     MatSelectModule,
     FormsModule,
     StudentInfoModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDatepickerModule
   ]
 })
 export class PagesModule { }

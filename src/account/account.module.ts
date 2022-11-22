@@ -10,6 +10,8 @@ import { LayoutRoutingModule } from './../layout/layout-routing.module';
 import { LayoutModule } from 'src/layout/layout.module';
 import { NavbarComponent } from 'src/layout/navbar/navbar.component';
 import { FooterComponent } from 'src/layout/footer/footer.component';
+import { CourseComponent } from './course/course.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FooterComponent } from 'src/layout/footer/footer.component';
     AboutComponent,
     DashboardComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CourseComponent,
+    NewsComponent
   ],
   imports: [
     CommonModule,
