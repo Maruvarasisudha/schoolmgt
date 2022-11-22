@@ -45,7 +45,7 @@
 :host {
    ::ng-deep {
       .mat-form-field-appearance-standard .mat-form-field-underline {
-         color: rgb(179, 0, 0);
+         background-color: red;
       }
      }
  }
