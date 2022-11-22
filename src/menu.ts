@@ -4,24 +4,24 @@ export const MENU: MenuItem[] = [
     {
         id: 1,
         label: 'Home',
-        link: '/account',
+        link: '',
     }, {
         id: 2,
         label: 'About',
-        link: '/account/about',
+        link: '/about',
     
     }, {
         id: 3,
         label: 'course',
-        link: '/account/dashboard',
+        link: '/dashboard',
     },
     {
         id: 4,
         label: 'News',
-        link: '/account/dashboard',
+        link: '/dashboard',
     }, {
         id: 5,
         label: 'Contact',
-        link: '/account/dashboard',
+        link: '/contact',
     },
 ]
