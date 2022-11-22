@@ -1,0 +1,127 @@
+<div class="container mt-5 ">
+    <div class="shadow  pb-3 pt-4   px-3 bg-body rounded">
+        <div class="row">
+            <div class="col">
+                <h4 class="text-start last"><b class="margin">STUDENT ADMISSION</b></h4></div>
+                    
+                <div class="col text-end" id="last">Dashboard | Student Information | <b>Student List</b></div>
+                
+            </div>
+        </div>
+    
+    <div class="row mt-5  px-3">
+        <div class="col">
+            <p class="last2"> <b>Add Student</b></p>
+        </div>
+        <div class="col text-end">
+            <button class="btn last3 fs-6 text-white rounded-pill" type="button" routerLink="./../add-student"> + IMPORT STUDENT </button>
+        </div>
+    </div>
+</div>
+<div class="container mt-5 ">
+    <div class="shadow justify-content-md-center px-4  py-3 mt-3 bg-body rounded ">
+       <p class="last fs-6">PERSONAL INFO</p>
+   <hr>
+   <form (ngSubmit)="onSubmit()" [formGroup]="studentForm">
+    <div class="row mt-3">
+        
+        <div class="col mt-4">
+            <mat-form-field class="example-full-width">
+                <mat-label class="info">Admission Number</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+     <div class="col mt-2">
+           <mat-form-field appearance="standard">
+                <mat-label class="info"> Class</mat-label>
+                <mat-select formControlName="class" [(ngModel)]="obj.class" required
+                    [ngClass]="{ 'is-invalid': Submitted && f['class'].errors || f['class'].touched&& f['class'].errors }">
+                    <mat-option>select class</mat-option>
+                    <mat-option *ngFor="let Class of stand" [value]="Class.value">
+                        {{Class.viewValue}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="Submitted && f['class'].errors|| f['class'].touched&& f['class'].errors">
+                    Please select a class</mat-error>
+                <mat-hint></mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="col  mt-2">
+            <mat-form-field appearance="standard">
+                <mat-label class="info">section </mat-label>
+                <mat-select formControlName="section" [(ngModel)]="obj.section" required
+                    [ngClass]="{ 'is-invalid': Submitted && f['section'].errors || f['section'].touched&& f['section'].errors }">
+                    <mat-option>select section</mat-option>
+                    <mat-option *ngFor="let sec of sec" [value]="sec.value">
+                        {{sec.viewValue}}S
+                    </mat-option>
+                    
+                   </mat-select>
+                <mat-error
+                    *ngIf="Submitted && f['section'].errors|| f['section'].touched&& f['section'].errors">
+                    Please select a section</mat-error>
+                <mat-hint></mat-hint>
+            </mat-form-field>
+        </div>
+       
+        <div class="col mt-4">
+            <mat-form-field class="example-full-width">
+                <mat-label class="info">Roll Number</mat-label>
+                <input matInput >
+            </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="row">
+     <div class="col mt-4 ">
+            <mat-form-field class="example-full-width">
+                <mat-label class="info">First Name</mat-label>
+                <input matInput formControlName="firstName" [(ngModel)]="obj.firstName" required
+                [ngClass]="{ 'is-invalid': Submitted && f['firstName'].errors || f['firstName'].touched&& f['firstName'].errors }">
+                <mat-error *ngIf="Submitted && f['firstName'].errors|| f['firstName'].touched&& f['firstName'].errors">
+                    Please Enter Your FirstName</mat-error>
+            </mat-form-field>
+        </div> 
+        <div class="col mt-4 ">
+            <mat-form-field class="example-full-width">
+                <mat-label class="info"> Last Name</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div> 
+        <div class="col mt-2 ">
+            <mat-form-field appearance="standard">
+                <mat-label class="info">Gender</mat-label>
+                <mat-select formControlName="gender" [(ngModel)]="obj.gender" required
+                    [ngClass]="{ 'is-invalid': Submitted && f['gender'].errors || f['gender'].touched&& f['gender'].errors }">
+                    <mat-option>Gender</mat-option>
+                    <mat-option *ngFor="let gender of sece" [value]="gender.value">
+                        {{gender.viewValue}}
+                    </mat-option>
+                   </mat-select>
+                <mat-error
+                    *ngIf="Submitted && f['gender'].errors|| f['gender'].touched&& f['gender'].errors">
+                    Please select Your Gender</mat-error>
+                <mat-hint></mat-hint>
+            </mat-form-field>
+        </div> 
+        <div class="col mt-4 ">
+            <!-- <mat-form-field  >
+                <input matInput [matDatepicker]="picker">
+                <mat-label class="info">choose a Date</mat-label>
+                <mat-datepicker-toggle matSuffix [for]="picker" formControlName="datePicker" [(ngModel)]="obj.datepicker" required
+                [ngClass]="{ 'is-invalid': Submitted && f['datepicker'].errors || f['datepicker'].touched&& f['datepicker'].errors }"></mat-datepicker-toggle>
+                <mat-datepicker #picker>
+                  <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancel</button>
+                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                  </mat-datepicker-actions>
+                </mat-datepicker>
+                <mat-error
+                *ngIf="Submitted && f['datepicker'].errors|| f['datepicker'].touched&& f['datepicker'].errors">
+                Please select Your Gender</mat-error>
+              </mat-form-field> -->
+        </div> 
+     </div>
+   
+   </form>
+</div>

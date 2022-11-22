@@ -12,15 +12,15 @@ const routes: Routes = [
   {
     path: 'account', component: DashboardComponent,
     children: [
-    { path: 'home', component: HomeComponent },
+    { path: '', component: HomeComponent },
     { path: 'signup', component: SignupComponent },
+    { path: 'login', component: LoginComponent },
     { path: 'about', component: AboutComponent },
     {path:'contact',component:ContactComponent},
 
     ]
-  },
-  { path: 'login', component: LoginComponent },
-];
+  }
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

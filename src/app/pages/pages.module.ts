@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentInfoModule } from './student-info/student-info.module';
 import { MaterialModule } from '../material/material.module';
 
+
 @NgModule({
   declarations: [
     NavbarsComponent,
@@ -25,6 +26,7 @@ import { MaterialModule } from '../material/material.module';
     StudentInfoModule,
     BrowserAnimationsModule,
     MaterialModule,
+    BrowserAnimationsModule,
   ]
 })
 export class PagesModule { }

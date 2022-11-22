@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +16,9 @@ import { MaterialModule } from './material/material.module';
 import { AccountModule } from 'src/account/account.module';
 import { FooterComponent } from './../layout/footer/footer.component';
 import { AccountRoutingModule } from 'src/account/account-routing.module';
-
+import { StudentInfoModule } from './pages/student-info/student-info.module';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -43,10 +45,13 @@ import { AccountRoutingModule } from 'src/account/account-routing.module';
     AccountModule,
     AccountRoutingModule,
     PagesModule,
-    MaterialModule
+    MaterialModule,
+    AccountModule,
+    StudentInfoModule
     
     ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
