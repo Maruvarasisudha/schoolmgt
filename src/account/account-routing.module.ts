@@ -17,7 +17,7 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent },
     ]
   }
-];
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
