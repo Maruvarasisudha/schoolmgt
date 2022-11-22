@@ -13,7 +13,7 @@ const routes: Routes = [
       { path: "navbars", component: NavbarsComponent },
       { path:"dashboard", component : DashboardComponent }
     ],
-   canActivate:[GuardGuard]
+  //  canActivate:[GuardGuard]
   }
 ];
 
