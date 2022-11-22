@@ -4,6 +4,7 @@ import { StudentAttendanceReportComponent } from './student-attendance-report/st
 import { StudentGroupComponent } from './student-group/student-group.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
+import { GuardGuard } from 'src/account/core/guards/guard.guard';
 
 const routes: Routes = [
   {
@@ -13,8 +14,8 @@ const routes: Routes = [
       {path:"studentgroup",component:StudentGroupComponent},
       {path:"student-list",component:StudentListComponent},
       {path:"add-student",component:AddStudentComponent}
-
-    ]
+    ],
+    canActivate:[GuardGuard]
   }
 ];
 

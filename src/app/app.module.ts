@@ -16,10 +16,6 @@ import { MaterialModule } from './material/material.module';
 import { AccountModule } from 'src/account/account.module';
 import { FooterComponent } from './../layout/footer/footer.component';
 import { AccountRoutingModule } from 'src/account/account-routing.module';
-import { StudentInfoModule } from './pages/student-info/student-info.module';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { MatIconModule } from '@angular/material/icon';
-
 
 @NgModule({
   declarations: [
@@ -47,7 +43,6 @@ import { MatIconModule } from '@angular/material/icon';
     PagesModule,
     MaterialModule,
     AccountModule,
-    StudentInfoModule
     
     ],
   providers: [],
