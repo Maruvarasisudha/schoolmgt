@@ -7,6 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,11 +16,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { NavbarsComponent } from './navbars/navbars.component';
 import { LayoutModule } from 'src/layout/layout.module';
 import { SidebarComponent } from 'src/layout/sidebar/sidebar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { StudentInfoModule } from './student-info/student-info.module';
 
 @NgModule({
   declarations: [
     NavbarsComponent,
-    SidebarComponent
+    SidebarComponent,  
+    DashboardComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +39,9 @@ import { SidebarComponent } from 'src/layout/sidebar/sidebar.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    StudentInfoModule,
+    BrowserAnimationsModule
   ]
 })
 export class PagesModule { }

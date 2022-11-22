@@ -18,10 +18,15 @@ import { FooterComponent } from './../layout/footer/footer.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import { PagesModule } from './pages/pages.module';
+import { AccountRoutingModule } from 'src/account/account-routing.module';
+import { LayoutRoutingModule } from './../layout/layout-routing.module';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
-const ngWizardConfig: NgWizardConfig = {
-  theme: THEME.default
-};
+
+
+// const ngWizardConfig: NgWizardConfig = {
+//   theme: THEME.default
+// };
 
 @NgModule({
   declarations: [
@@ -29,6 +34,7 @@ const ngWizardConfig: NgWizardConfig = {
    
     // NavbarComponent,
     // FooterComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -46,8 +52,13 @@ const ngWizardConfig: NgWizardConfig = {
     MatBadgeModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
-    NgWizardModule.forRoot(ngWizardConfig),
+    // NgWizardModule.forRoot(ngWizardConfig),
+    LayoutRoutingModule,
+    MatProgressBarModule,
+    AccountRoutingModule,
+    PagesModule,
    
+    
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,11 @@ const routes: Routes = [
     ],
    
   }
+  // {path:"layout",
+  // children:[
+  //   {path:"navbar",component:NavbarComponent},
+  //   {path:"footer",component:FooterComponent}
+  // ]}
 ];
 
 @NgModule({

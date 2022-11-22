@@ -1,2 +1,23 @@
 
  
+  <nav class="navbar fixed-top navbar-expand-lg nav  navbar-dark px " >
+    
+     <a class="navbar-brand "  href="#" >
+      <!-- <img src="./../assets/WhatsApp_Image_2022-11-08_at_11.28.59_AM-removebg-preview.png" alt="" width="70" height="70"> -->
+      <span class="fw-bold mx-5">ABC</span> 
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse px-4 justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav " *ngFor="let list of list ;let i = index">
+          <div class="navbar-nav fs-6">
+            <a class="nav-link active  fw-bold px-4" aria-current="page" href="{{list.link}}">{{list.label}}</a>
+          </div>
+        </ul>
+        <button type="button" class="btn btn badge rounded-pill px-4 pt-2 pb-2 text-white mx-4 fw-bold "><span class="fw-bold">Login</span></button>
+    
+      </div>
+     
+  </nav>
