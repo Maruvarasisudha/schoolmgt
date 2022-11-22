@@ -15,23 +15,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutRoutingModule } from './../layout/layout-routing.module';
 import { PagesModule } from './../app/pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MaterialModule } from './material/material.module';
 
 
-
-// const ngWizardConfig: NgWizardConfig = {
-//   theme: THEME.default
-// };
 
 @NgModule({
   declarations: [
-    AppComponent,
-   
-   
-    
-    
+    AppComponent, 
   ],
   imports: [
     BrowserModule,
@@ -43,16 +33,13 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatToolbarModule,
-    MatBadgeModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
     LayoutRoutingModule,
     AccountModule,
-    MatProgressBarModule,
     AccountRoutingModule,
     PagesModule,
-   
+    MaterialModule
     
     ],
   providers: [],
