@@ -10,12 +10,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
-    path: 'account', component: DashboardComponent,
+    path: '', component: DashboardComponent,
     children: [
-    { path: '', component: HomeComponent },
-    { path: 'signup', component: SignupComponent },
-    { path: 'about', component: AboutComponent },
-    {path:'contact',component:ContactComponent},
+      { path: '', component: HomeComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'signup', component: SignupComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'contact', component: ContactComponent },
 
     ]
   },
