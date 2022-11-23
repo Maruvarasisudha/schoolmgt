@@ -29,15 +29,12 @@
 .headercard {
    border: none;
    border-radius: 10px;
-  
 }
 .label{
    color: rgb(87,42,159);
    font-size: 15px;
 }
-.mat-select-trigger{
-   display: none;
-}
+
 .headcolr{
    color: rgb(87,42,159);
 }
@@ -45,7 +42,7 @@
 :host {
    ::ng-deep {
       .mat-form-field-appearance-standard .mat-form-field-underline {
-         background-color: red;
+         background-color: rgb(87,42,159);
       }
      }
  }
