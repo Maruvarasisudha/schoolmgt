@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AppRoutingModule } from './app-routing.module';
@@ -8,64 +8,44 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { NgWizardModule, NgWizardConfig, THEME } from 'ng-wizard';
-import { AccountModule } from 'src/account/account.module';
-import { AccountRoutingModule } from 'src/account/account-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutRoutingModule } from './../layout/layout-routing.module';
 import { PagesModule } from './../app/pages/pages.module';
-
 import { HttpClientModule } from '@angular/common/http';
-
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatButtonModule} from '@angular/material/button';
-
-
-
-
-
-// const ngWizardConfig: NgWizardConfig = {
-//   theme: THEME.default
-// };
+import { MaterialModule } from './material/material.module';
+import { AccountModule } from 'src/account/account.module';
+import { AccountRoutingModule } from 'src/account/account-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-
-
-
-
-
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgSelectModule,
+    PagesModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatToolbarModule,
-    MatBadgeModule,
+    AccountModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
-    // NgWizardModule.forRoot(ngWizardConfig),
     LayoutRoutingModule,
-    MatProgressBarModule,
+    AccountModule,
     AccountRoutingModule,
     PagesModule,
-    MatDatepickerModule,
-    MatButtonModule,
-    AccountModule
-
+    AccountModule,
+    MaterialModule,
+    AccountModule,
 
     ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

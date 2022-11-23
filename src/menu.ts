@@ -4,7 +4,7 @@ export const MENU: MenuItem[] = [
     {
         id: 1,
         label: 'Home',
-        link: '/home',
+        link: '',
     }, {
         id: 2,
         label: 'About',
@@ -22,6 +22,6 @@ export const MENU: MenuItem[] = [
     }, {
         id: 5,
         label: 'Contact',
-        link: '/dashboard',
+        link: '/contact',
     },
 ]
