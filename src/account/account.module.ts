@@ -13,6 +13,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutRoutingModule } from './../layout/layout-routing.module';
 import { NavbarComponent } from 'src/layout/navbar/navbar.component';
 import { FooterComponent } from 'src/layout/footer/footer.component';
+import { CourseComponent } from './course/course.component';
+import { NewsComponent } from './news/news.component';
 import { AccountRoutingModule } from './account-routing.module';
 
 @NgModule({
@@ -24,7 +26,9 @@ import { AccountRoutingModule } from './account-routing.module';
     AboutComponent,
     DashboardComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CourseComponent,
+    NewsComponent
   ],
   imports: [
     CommonModule,

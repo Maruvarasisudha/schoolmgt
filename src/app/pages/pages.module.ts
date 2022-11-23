@@ -13,7 +13,7 @@ import { MaterialModule } from '../material/material.module';
 @NgModule({
   declarations: [
     NavbarsComponent,
-    SidebarComponent,  
+    SidebarComponent,
     DashboardComponent
   ],
   imports: [
