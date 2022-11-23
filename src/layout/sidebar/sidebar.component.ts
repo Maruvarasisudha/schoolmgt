@@ -13,7 +13,6 @@ import { AuthenticationService } from './../../account/service/auth.service';
 })
 export class SidebarComponent implements OnInit {
   
-  
   constructor(private authenticationService: AuthenticationService ,private router:Router) { }
 
   ngOnInit(): void {
@@ -22,6 +21,7 @@ export class SidebarComponent implements OnInit {
   logout() {
     console.log("logout")
     this.authenticationService.logout();
-}   
+}
+  
 
 }
