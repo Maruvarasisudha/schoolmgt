@@ -14,14 +14,12 @@ import { PagesModule } from './../app/pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { AccountModule } from 'src/account/account.module';
-import { FooterComponent } from './../layout/footer/footer.component';
 import { AccountRoutingModule } from 'src/account/account-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent, 
     AppComponent,
-   
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +39,10 @@ import { AccountRoutingModule } from 'src/account/account-routing.module';
     AccountModule,
     AccountRoutingModule,
     PagesModule,
+    AccountModule,
     MaterialModule,
     AccountModule,
-    
+
     ],
   providers: [],
   bootstrap: [AppComponent],

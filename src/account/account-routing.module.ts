@@ -6,7 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { NewsComponent } from './news/news.component';
+import { CourseComponent } from './course/course.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'signup', component: SignupComponent },
       { path: 'about', component: AboutComponent },
       { path: 'contact', component: ContactComponent },
-
+      {path:'news',component:NewsComponent},
+      {path:'course',component:CourseComponent},
     ]
   },
   { path: 'login', component: LoginComponent },
