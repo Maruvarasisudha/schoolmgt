@@ -105,21 +105,23 @@
             </mat-form-field>
         </div> 
         <div class="col mt-4 ">
-            <!-- <mat-form-field  >
-                <input matInput [matDatepicker]="picker">
-                <mat-label class="info">choose a Date</mat-label>
-                <mat-datepicker-toggle matSuffix [for]="picker" formControlName="datePicker" [(ngModel)]="obj.datepicker" required
-                [ngClass]="{ 'is-invalid': Submitted && f['datepicker'].errors || f['datepicker'].touched&& f['datepicker'].errors }"></mat-datepicker-toggle>
+            <mat-form-field  >
+                <input matInput [matDatepicker]="picker" formControlName="date" [(ngModel)]="obj.date" required
+                [ngClass]="{ 'is-invalid': Submitted && f['date'].errors || f['date'].touched&& f['date'].errors }">
+                <mat-label class="info"> Date of Birth</mat-label>
+                <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
                 <mat-datepicker #picker>
                   <mat-datepicker-actions>
                     <button mat-button matDatepickerCancel>Cancel</button>
                     <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                  </mat-datepicker-actions>
+                  
+                </mat-datepicker-actions>
+               
                 </mat-datepicker>
                 <mat-error
-                *ngIf="Submitted && f['datepicker'].errors|| f['datepicker'].touched&& f['datepicker'].errors">
-                Please select Your Gender</mat-error>
-              </mat-form-field> -->
+                    *ngIf="Submitted && f['date'].errors|| f['date'].touched&& f['date'].errors">
+                    Please select Your date of birth</mat-error>
+              </mat-form-field>
         </div> 
      </div>
    

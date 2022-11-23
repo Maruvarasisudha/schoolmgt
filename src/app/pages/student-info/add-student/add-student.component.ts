@@ -52,7 +52,7 @@ export class AddStudentComponent implements OnInit {
       section: ['', Validators.required],
       firstName:['', Validators.required],
       gender:['', Validators.required],
-      datePicker:['', Validators.required]
+      date:['', Validators.required]
      } )
   
   }
