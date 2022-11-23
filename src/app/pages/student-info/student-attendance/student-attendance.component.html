@@ -1,21 +1,21 @@
 <div class="container-fluid ">
-  <div class="card mx-5 mt-4" style="border: none; border-radius: 10px; box-shadow: 1px 1px 10px #888888;">
-    <div class="row justify-content-between mx-1 p-1 ">
-      <div class="col-lg-2  ">
-        <h6 style="color:rgb(87, 42, 159)"><b>STUDENTATTENDANCE</b></h6>
+  <div class="card mx-5 mt-4 p-2 mt-5" style="border: none; border-radius: 10px; box-shadow: 1px 1px 10px #888888;">
+    <div class="row justify-content-between px-2 ">
+      <div class="col mt-2">
+        <h6 style="color:rgb(73, 8, 95)"><b>STUDENTATTENDANCE</b></h6>
       </div>
-      <div class="col-lg-13 my-auto mt-2 text-end">
-        <a class="mx-2" style="text-decoration:none;color: rgb(87, 42, 159);" href="#">Dashboard </a>|
-        <a class="mx-2" style="text-decoration:none;color: rgb(87, 42, 159)" href="#">Student Info </a>|
-        <a style="text-decoration:none;color: rgb(87, 42, 159)" href="#">Student Attendance </a>
+      <div class="col my-auto mt-2 text-end">
+        <a class="mx-2" style="text-decoration:none;color:rgb(85, 12, 108);" href="#">Dashboard </a>|
+        <a class="mx-2" style="text-decoration:none;color:rgb(68, 12, 82)" href="#">Student Info </a>|
+        <a style="text-decoration:none;color:rgb(59, 5, 75)" href="#">Student Attendance </a>
       </div>
     </div>
   </div>
 </div><br>
-<div class="row justify-content-between mx-3 p-2 ">
+<div class="row justify-content-between mx-4 p-2">
 
-  <div class="col-lg-2 text-end ">
-    <h6 style="color:rgb(87, 42, 159)">SELECTCRITERIA</h6>
+  <div class="col-lg-1 px-10 text-end ">
+    <h6 style="color:rgb(53, 5, 84)">SELECTCRITERIA</h6>
   </div>
   <div class="col-lg-3 mx-4 text-end ">
 
@@ -33,9 +33,10 @@
 
       <div class="container my-4">
 
-        <div class="row mx-5 my-5">
+        <div class="row mx-5 ">
           <div class="col-lg-4 col-md-10">
             <mat-form-field appearance="standard">
+
               <mat-label>Select Class*</mat-label>
               <mat-select>
                 <mat-option>None</mat-option>
@@ -43,7 +44,7 @@
               </mat-select>
             </mat-form-field>
           </div>
-          <div class="col">
+          <div class="col-lg-4 col-md-10">
             <mat-form-field appearance="standard">
               <mat-label>Select section*</mat-label>
               <mat-select>
@@ -52,15 +53,20 @@
               </mat-select>
             </mat-form-field>
           </div>
-          <div class="col">
-            <mat-form-field appearance="standard">
-              <mat-label>Choose a date</mat-label>
-              <input matInput [matDatepicker]="picker">
-              <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle style="margin-left:140px ; " matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+          <div class="col-lg-4 mt-3 col-md-10">
+
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Attendance Date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker>
+                <mat-datepicker-actions>
+                  <button mat-button mat-raised-button color="warn" matDatepickerCancel>Cancel</button>
+                  <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                </mat-datepicker-actions>
+              </mat-datepicker>
             </mat-form-field>
           </div>
+
 
           <div class="col-lg-15 mx-4 px-5 text-end ">
 

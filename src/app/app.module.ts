@@ -60,8 +60,8 @@ import {MatButtonModule} from '@angular/material/button';
     AccountRoutingModule,
     PagesModule,
     MatDatepickerModule,
-    MatButtonModule
-
+    MatButtonModule,
+    AccountModule
 
 
     ],
