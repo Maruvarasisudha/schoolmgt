@@ -9,6 +9,7 @@ import { SidebarComponent } from 'src/layout/sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentInfoModule } from './student-info/student-info.module';
 import { MaterialModule } from '../material/material.module';
+import { AlertModule,SidebarModule } from 'ng-cdbangular';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,8 @@ import { MaterialModule } from '../material/material.module';
     BrowserAnimationsModule,
     MaterialModule,
     BrowserAnimationsModule,
+    SidebarModule
+
   ]
 })
 export class PagesModule { }

@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewEncapsulation, Inject, ViewChild  } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from './../../account/service/auth.service';
-
-// import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
-// import { Menu, MenuItemModel } from '@syncfusion/ej2-navigations';
-// import { enableRipple } from '@syncfusion/ej2-base';
+import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { Menu, MenuItemModel } from '@syncfusion/ej2-navigations';
+import { enableRipple } from '@syncfusion/ej2-base';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
@@ -22,6 +22,9 @@ export class SidebarComponent implements OnInit {
     console.log("logout")
     this.authenticationService.logout();
 }
+toolbarCliked(args:ClickEventArgs) {
+  if(args.item.tooltipText == "Menu") {
+  }
+}
   
-
 }
