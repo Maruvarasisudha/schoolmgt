@@ -34,7 +34,8 @@
               "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/ng-wizard/themes/ng_wizard.min.css",
-              "ng-wizard/themes/ng_wizard_theme_arrows.min.css"
+              "ng-wizard/themes/ng_wizard_theme_arrows.min.css",
+              "node_modules/material-design-icons/iconfont/material-icons.css"
             ],
             "scripts": []
           },
@@ -108,7 +109,8 @@
               "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/ng-wizard/themes/ng_wizard.min.css",
-              "ng-wizard/themes/ng_wizard_theme_arrows.min.css"
+              "ng-wizard/themes/ng_wizard_theme_arrows.min.css",
+              "node_modules/material-design-icons/iconfont/material-icons.css"
             ],
             "scripts": []
           }

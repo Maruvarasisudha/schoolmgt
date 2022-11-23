@@ -14,6 +14,14 @@ interface Gender {
   value: string;
   viewValue: string;
 }
+interface group {
+  value: string;
+  viewValue: string;
+}
+interface casted {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-add-student',
   templateUrl: './add-student.component.html',
@@ -42,6 +50,23 @@ export class AddStudentComponent implements OnInit {
     { value: 'Others', viewValue: 'Others' },
 
   ];
+  casted: casted[] = [
+    { value: 'Hindu-0', viewValue: 'Hindu' },
+    { value: 'Male-1', viewValue: '' },
+    { value: 'Others', viewValue: 'Others' },
+
+  ];
+  group: group[] = [
+    { value: 'A+-0', viewValue: 'A+' },
+    { value: 'O+-1', viewValue: 'O+' },
+    { value: 'B+-2', viewValue: 'B+' },
+    { value: 'AB+-3', viewValue: 'AB+' },
+    { value: 'A--4', viewValue: 'A-' },
+    { value: 'O--5', viewValue: 'O-' },
+    { value: 'B-6', viewValue: 'B-' },
+    { value: 'AB-7', viewValue: 'AB-' },
+
+  ];
   constructor(private fb: FormBuilder,
     private route: Router,
     private router: ActivatedRoute) { }
@@ -52,7 +77,9 @@ export class AddStudentComponent implements OnInit {
       section: ['', Validators.required],
       firstName:['', Validators.required],
       gender:['', Validators.required],
-      date:['', Validators.required]
+      date:['', Validators.required],
+      bloodgroup:['', ],
+      cast:['',]
      } )
   
   }

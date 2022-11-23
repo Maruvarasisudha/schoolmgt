@@ -1,5 +1,5 @@
 <div class="container mt-5 ">
-    <div class="shadow  pb-3 pt-4   px-3 bg-body rounded">
+    <div class="shadow  pb-3 pt-4 px-3 bg-body rounded">
         <div class="row">
             <div class="col">
                 <h4 class="text-start last"><b class="margin">STUDENT ADMISSION</b></h4></div>
@@ -114,8 +114,7 @@
                   <mat-datepicker-actions>
                     <button mat-button matDatepickerCancel>Cancel</button>
                     <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                  
-                </mat-datepicker-actions>
+                  </mat-datepicker-actions>
                
                 </mat-datepicker>
                 <mat-error
@@ -124,6 +123,54 @@
               </mat-form-field>
         </div> 
      </div>
-   
-   </form>
+     <div class="row">
+        <div class="col">
+        <mat-form-field appearance="standard">
+            <mat-label class="info">BloodGroup</mat-label>
+            <mat-select formControlName="bloodgroup" [(ngModel)]="obj.bloodgroup" >
+                <mat-option>bloodgroup</mat-option>
+                <mat-option *ngFor="let bloodgroup of group" [value]="bloodgroup.value">
+                    {{bloodgroup.viewValue}}
+                </mat-option>
+               </mat-select>
+            <mat-hint></mat-hint>
+        </mat-form-field>
+     </div>
+     
+     <div class="col">
+        <mat-form-field appearance="standard">
+            <mat-label class="info">Cast</mat-label>
+            <mat-select formControlName="cast" [(ngModel)]="obj.cast">
+               
+                <mat-option>cast</mat-option>
+                <mat-option *ngFor="let cast of casted" [value]="cast.value">
+                    {{cast.viewValue}}
+                </mat-option>
+               </mat-select>
+            <mat-hint></mat-hint>
+        </mat-form-field>
+     </div>
+     <!-- <div class="col">
+        <mat-form-field class="example-full-width">
+            <mat-label class="info">First Name</mat-label>
+          
+        </mat-form-field>
+     </div> -->
+     <!-- <div class="col">
+        <mat-form-field class="example-full-width">
+            <mat-label class="info">WWWW</mat-label>
+          
+        </mat-form-field>
+     </div>
+     <div class="col">
+        <mat-form-field class="example-full-width">
+            <mat-label class="info">NNNN</mat-label>
+          
+        </mat-form-field>
+     </div>  -->
+     </div>
+    </form>
+    
+</div>
+
 </div>
