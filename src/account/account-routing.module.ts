@@ -9,7 +9,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewsComponent } from './news/news.component';
 import { CourseComponent } from './course/course.component';
 
-
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
