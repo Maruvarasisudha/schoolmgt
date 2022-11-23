@@ -17,7 +17,7 @@ const routes: Routes = [
       {path:"student-list",component:StudentListComponent},
       {path:"add-student",component:AddStudentComponent}
     ],
-    //  canActivate:[GuardGuard]
+     canActivate:[GuardGuard]
   }
 ];
 
