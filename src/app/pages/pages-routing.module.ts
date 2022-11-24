@@ -3,16 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { GuardGuard } from 'src/account/core/guards/guard.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarsComponent } from './navbars/navbars.component';
+import { BodyComponent } from './body/body.component';
+import { MainComponent } from './main/main.component';
 
 
 const routes: Routes = [
   {
-    path: "pages",component: NavbarsComponent ,
+    path: "pages",component: MainComponent,
     children: [
-      //  { path: "navbars", component: NavbarsComponent },
-      { path:"dashboard", component : DashboardComponent }
+      { path: "", redirectTo:'dashboard',pathMatch:'full'},
+      { path: "dashboard", component: DashboardComponent },
+      { path: "body", component: BodyComponent },
+
     ],
-  //  canActivate:[GuardGuard]
+   canActivate:[GuardGuard]
   }
 ];
 

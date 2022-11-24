@@ -6,16 +6,20 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NavbarsComponent } from './navbars/navbars.component';
 import { LayoutModule } from 'src/layout/layout.module';
 import { SidebarComponent } from 'src/layout/sidebar/sidebar.component';
+import { BodyComponent } from './body/body.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentInfoModule } from './student-info/student-info.module';
 import { MaterialModule } from '../material/material.module';
 import { AlertModule,SidebarModule } from 'ng-cdbangular';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     NavbarsComponent,
     SidebarComponent,
-    DashboardComponent
+    DashboardComponent,
+    BodyComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,

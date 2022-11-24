@@ -1,36 +1,18 @@
-<div class="app" style="display: flex; height: 100vh; overflow:scroll initial">
-  <CDBSidebar textColor="#ffffff" backgroundColor="#14331E">
-      <CDBSidebarHeader [prefix]="icon" >
-          <ng-template #icon>
-              <i class="fa fa-bars fa-large"></i>
-          </ng-template>
-
-          Contrast
-      </CDBSidebarHeader>
-
-      <CDBSidebarContent>
-          <CDBSidebarMenu class="sidebar-content">
-              <CDBSidebarMenuItem link='/' icon="columns" >
-                  Dashboard                   
-              </CDBSidebarMenuItem>               
-              <CDBSidebarMenuItem link='/tables' icon="table" >
-                  Tables                  
-              </CDBSidebarMenuItem>               
-              <CDBSidebarMenuItem link='/profile' icon="user" >
-                  Profile                   
-              </CDBSidebarMenuItem>               
-              <CDBSidebarMenuItem href='/404' icon="exclamation-circle" >
-                  <span style="margin-left: 5px;">404 Page</span>                    
-              </CDBSidebarMenuItem>                 
-          </CDBSidebarMenu>
-      </CDBSidebarContent>
-      <div class="mt-auto">
-
-          <CDBSidebarFooter style="text-align: center; margin-top: auto;">
-              <div class="sidebar-btn-wrapper" style="padding: 20px 5px">
-                  Sidebar Footer
-              </div>
-          </CDBSidebarFooter>
-      </div>
-  </CDBSidebar>
+<div class="sidenav" [ngClass]="collapsed?'sidenav-collapsed':''">
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapse()">A</button>
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">SCHOOL</div>
+        <button class="btn-close" @rotate *ngIf="collapsed"  (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a class="sidenav-nav-link" [routerLink]="[data.routeLink]"
+            routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <i class="sidenav-link-icon" [class]="data.icon"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.lable}}</span>
+            </a>
+        </li>
+    </ul>
 </div>
