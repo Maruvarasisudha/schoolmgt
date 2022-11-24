@@ -18,7 +18,7 @@ interface group {
   value: string;
   viewValue: string;
 }
-interface casted {
+interface religions {
   value: string;
   viewValue: string;
 }
@@ -50,10 +50,10 @@ export class AddStudentComponent implements OnInit {
     { value: 'Others', viewValue: 'Others' },
 
   ];
-  casted: casted[] = [
+  religions: religions[] = [
     { value: 'Hindu-0', viewValue: 'Hindu' },
-    { value: 'Male-1', viewValue: '' },
-    { value: 'Others', viewValue: 'Others' },
+    { value: 'muslim-1', viewValue: 'muslim' },
+    { value: 'Others-2', viewValue: 'Others' },
 
   ];
   group: group[] = [
@@ -79,7 +79,7 @@ export class AddStudentComponent implements OnInit {
       gender:['', Validators.required],
       date:['', Validators.required],
       bloodgroup:['', ],
-      cast:['',]
+      religion:['',]
      } )
   
   }
