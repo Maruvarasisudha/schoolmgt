@@ -1,4 +1,4 @@
-<section class="login  ">
+<section class="login">
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
             <div class="col mt-5 my-5">
@@ -34,15 +34,15 @@
                             <form class="mx-5 mx-md-4 mt-5" [formGroup]="loginForm" (ngSubmit)="submit()">
                                 <div class="d-flex flex-row align-items-center mb-4">
                                     <div class="form-outline flex-fill mb-0">
-                                        <span><img src="../../assets/user-circle-solid-24.png"></span>
+                                        <span class="ms-5"><img src="../../assets/user-circle-solid-24.png"></span>
                                         <label class="form-label ms-2" style="color:rgb(107, 106, 106) "><b>User Name</b><sup style="color:rgb(207, 14, 14);font-size: 17px;">*</sup></label>
-                                        <div class="in_single_input input ">
+                                        <div class="in_single_input input ms-5">
                                             <input type="userName" formControlName="userName" class="form-control"
                                                 placeholder="Enter your userName" required
                                                 [ngClass]="{ 'is-invalid': Submitted && f['userName'].errors || f['userName'].touched&& f['userName'].errors} " />
                                             <div *ngIf="Submitted && f['userName'].errors|| f['userName'].touched&& f['userName'].errors"
                                                 class="invalid-feedback">
-                                                <div *ngIf="f['userName'].errors['required']"> User Name is required
+                                                <div *ngIf="f['userName'].errors['required']"> USER NAME IS REQUIRD
                                                 </div>
                                             </div>
                                         </div>
@@ -50,15 +50,15 @@
                                 </div>
                                 <div class="d-flex flex-row align-items-center mb-4">
                                     <div class="form-outline flex-fill mb-0">
-                                        <span><img src="../../assets/key-solid-24.png"></span>
+                                        <span class="ms-5"><img src="../../assets/key-solid-24.png"></span>
                                         <label class="form-label ms-2" style="color:rgb(107, 106, 106)"><b>Password</b><sup style="color:rgb(207, 14, 14);font-size: 18px;">*</sup></label>
-                                        <div class="in_single_input input ">
+                                        <div class="in_single_input input ms-5 ">
                                             <input type="password" formControlName="password" class="form-control"
                                                 placeholder="Enter your password" required
                                                 [ngClass]="{ 'is-invalid': Submitted && f['password'].errors || f['password'].touched&& f['password'].errors} " />
                                             <div *ngIf="Submitted && f['password'].errors|| f['password'].touched&& f['password'].errors"
                                                 class="invalid-feedback">
-                                                <div *ngIf="f['password'].errors['required']"> Password is required
+                                                <div *ngIf="f['password'].errors['required']"> PASSWORD IS REQUIRED
                                                 </div>
                                             </div>
                                         </div>

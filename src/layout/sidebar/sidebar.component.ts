@@ -8,6 +8,7 @@ interface SidenavTogle {
   screenWidth: number;
   collapsed: boolean;
 }
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -46,7 +47,8 @@ export class SidebarComponent implements OnInit {
   collapsed = false;
   screenWidth = 0;
   navData = navData;
-  
+  data:any=[];
+  subLists:any=[]
   constructor(private authenticationService: AuthenticationService ,private router:Router) { }
   @HostListener('window:resize',['$event'])
   onResize(event:any){
@@ -57,7 +59,9 @@ export class SidebarComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    this.screenWidth = window.innerWidth; 
+    this.screenWidth = window.innerWidth;
+    this.getNav(); 
+
   }
   toggleCollapse() {
     this.collapsed = !this.collapsed;
@@ -72,4 +76,12 @@ export class SidebarComponent implements OnInit {
     console.log("logout")
     this.authenticationService.logout();
 }
+
+getNav(){
+  console.log(navData)
+  this.data=navData
+  console.log("nav"+this.data)
+ 
+}
+
 }
