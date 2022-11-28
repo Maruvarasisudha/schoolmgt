@@ -42,7 +42,7 @@
                                                 [ngClass]="{ 'is-invalid': Submitted && f['userName'].errors || f['userName'].touched&& f['userName'].errors} " />
                                             <div *ngIf="Submitted && f['userName'].errors|| f['userName'].touched&& f['userName'].errors"
                                                 class="invalid-feedback">
-                                                <div *ngIf="f['userName'].errors['required']"> USER NAME IS REQUIRD
+                                                <div *ngIf="f['userName'].errors['required']"> User Name is required
                                                 </div>
                                             </div>
                                         </div>
@@ -58,7 +58,7 @@
                                                 [ngClass]="{ 'is-invalid': Submitted && f['password'].errors || f['password'].touched&& f['password'].errors} " />
                                             <div *ngIf="Submitted && f['password'].errors|| f['password'].touched&& f['password'].errors"
                                                 class="invalid-feedback">
-                                                <div *ngIf="f['password'].errors['required']"> PASSWORD IS REQUIRED
+                                                <div *ngIf="f['password'].errors['required']"> Password is requires
                                                 </div>
                                             </div>
                                         </div>
