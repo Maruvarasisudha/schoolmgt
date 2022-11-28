@@ -1,4 +1,4 @@
-<div class="sidenav" [ngClass]="collapsed?'sidenav-collapsed':''">
+<!-- <div class="sidenav scrollbar-near-moon" [ngClass]="collapsed?'sidenav-collapsed':''">
     <div class="logo-container">
         <button class="logo" (click)="toggleCollapse()">A</button>
         <div class="logo-text" @fadeInOut *ngIf="collapsed">SCHOOL</div>
@@ -11,23 +11,75 @@
             <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
                 [routerLinkActiveOptions]="{exact:true}">
                 <i class="sidenav-link-icon" [class]="data.icon"></i>
+                <button class="dropdown-btn">Dropdown 
+                    <i class="fa fa-caret-down"></i>
+                  </button>
                 <span class="sidenav-link-text dropdown-toggle" data-bs-toggle="dropdown" id="dropdownMenuLink"
                     @fadeInOut *ngIf="collapsed">{{data.lable}}
                 </span>
             </a>
-        </li>
-
-        <!-- <li class="nav-item dropdown" *ngIf="data.subItems">
-            <a class="nav-link dropdown-toggle text-white p-0 fs-6 " href="#" id="navbarDropdownMenuLink" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-            </a>
-            <ul class="dropdown-menu" *ngFor="let subList of subList;let i=index">
-              <li >
-                <a class="dropdown-item" href="#">{{subList.id}}</a>
-              </li>
+            <ul class="sidenav-nav"  *ngIf="data.subItems">
+                <li class="sidenav-nav-item" *ngFor="let subdata of data.subItems"><a class="sidenav-nav-link" href="#">
+                    <i class="sidenav-link-icon" [class]="subdata.icon"></i>
+                <span class="sidenav-link-text dropdown-toggle" data-bs-toggle="dropdown" id="dropdownMenuLink"
+                    @fadeInOut *ngIf="collapsed">{{subdata.lable}}
+                </span>
+                </a></li>
+               
             </ul>
-          
-        </li>  -->
+        </li>
+        
+
+       
     </ul>
 
-</div>
+</div> -->
+
+
+<div class="sidebar" [class.sidebar-close]="!openSidebar">
+    <div class="logo-details" >
+      <div class="logo">
+        <h3 class="dropdown-title">
+            SCHOOL</h3>
+      </div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li *ngFor="let item of menuSidebar" #itemEl routerLinkActive="active">
+        <div *ngIf="item.sub_menu.length == 0" class="dropdown-title">
+          <a [routerLink]="[item.link]">
+            <i [class]="item.icon"></i>
+            <span class="link_name">{{item.link_name}}</span>
+          </a>
+        </div>
+        <div *ngIf="item.sub_menu.length > 0" class="dropdown-title" (click)="showSubmenu(itemEl)">
+          <a>
+            <i [class]="item.icon"></i>
+            <span class="link_name">{{item.link_name}}</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow'></i>
+        </div>
+        <ul class="sub-menu" [class.blank]="item.sub_menu.length == 0">
+          <li><a class="link_name">{{item.link_name}}</a></li>
+          <li *ngFor="let item_sub of item.sub_menu" routerLinkActive="active">
+            <a [routerLink]="[item_sub.link]">{{item_sub.link_name}}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+   <div class="home-header">
+      <div class="hamburger-menu">
+        <input type="checkbox" id="checkbox-hamburger-menu" [(ngModel)]="openSidebar"/>
+        <label class="label-hamburger-menu" for="checkbox-hamburger-menu">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+          </label>
+      </div>
+      <!-- <div class="title">Header</div> -->
+    </div> 
+    <div >
+      <router-outlet></router-outlet>
+    </div>
+  </section>

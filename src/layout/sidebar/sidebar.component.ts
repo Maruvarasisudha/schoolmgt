@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, HostListener, Output  } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { navData } from './../sidebar/nav';
+import { menuSidebar } from './../sidebar/nav';
 import { AuthenticationService } from './../../account/service/auth.service';
 import{trigger,transition,style,animation,animate,keyframes} from '@angular/animations'
 
@@ -13,75 +13,89 @@ interface SidenavTogle {
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  animations:[
-    trigger('fadeInOut',[
-      transition(':enter',[
-        style({opacity:0}),
-        animate('350ms',
-        style({opacity:0}),
-        )
-      ]),
-      transition(':leave',[
-        style({opacity:1}),
-        animate('350ms',
-        style({opacity:0}),
-        )
-      ])
-    ]),
-    trigger('rotate',[
-      transition(':enter',[
-        style({opacity:0}),
-        animate('1000ms',
-        keyframes([
-          style({transform:'rotate(0deg)',offset:'0'}), 
-          style({transform:'rotate(2turn)',offset:'1'}),
-        ])
-        )
-      ]),
-    ])
-  ]
+  // animations:[
+  //   trigger('fadeInOut',[
+  //     transition(':enter',[
+  //       style({opacity:0}),
+  //       animate('350ms',
+  //       style({opacity:0}),
+  //       )
+  //     ]),
+  //     transition(':leave',[
+  //       style({opacity:1}),
+  //       animate('350ms',
+  //       style({opacity:0}),
+  //       )
+  //     ])
+  //   ]),
+  //   trigger('rotate',[
+  //     transition(':enter',[
+  //       style({opacity:0}),
+  //       animate('1000ms',
+  //       keyframes([
+  //         style({transform:'rotate(0deg)',offset:'0'}), 
+  //         style({transform:'rotate(2turn)',offset:'1'}),
+  //       ])
+  //       )
+  //     ]),
+  //   ])
+  // ]
 })
 
 export class SidebarComponent implements OnInit {
-  @Output() onToggleSideNav: EventEmitter<SidenavTogle> = new EventEmitter()
-  collapsed = false;
-  screenWidth = 0;
-  navData = navData;
-  data:any=[];
-  subLists:any=[]
-  constructor(private authenticationService: AuthenticationService ,private router:Router) { }
-  @HostListener('window:resize',['$event'])
-  onResize(event:any){
-    this.screenWidth=window.innerWidth;
-    if(this.screenWidth<=767){
-      this.collapsed = false;
-      this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth })  
-    }
-  }
-  ngOnInit(): void {
-    this.screenWidth = window.innerWidth;
-    this.getNav(); 
+//   @Output() onToggleSideNav: EventEmitter<SidenavTogle> = new EventEmitter()
+//   collapsed = false;
+//   screenWidth = 0;
+//   navData = navData;
+//   data:any=[];
+//   subLists:any=[]
+//   constructor(private authenticationService: AuthenticationService ,private router:Router) { }
+//   @HostListener('window:resize',['$event'])
+//   onResize(event:any){
+//     this.screenWidth=window.innerWidth;
+//     if(this.screenWidth<=767){
+//       this.collapsed = false;
+//       this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth })  
+//     }
+//   }
+//   ngOnInit(): void {
+//     this.screenWidth = window.innerWidth;
+//     this.getNav(); 
 
-  }
-  toggleCollapse() {
-    this.collapsed = !this.collapsed;
-    this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth })
-  }
-  closeSidenav() {
-    this.collapsed = false;
-    this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth })
+//   }
+//   toggleCollapse() {
+//     this.collapsed = !this.collapsed;
+//     this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth })
+//   }
+//   closeSidenav() {
+//     this.collapsed = false;
+//     this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth })
 
-  }
-  logout() {
-    console.log("logout")
-    this.authenticationService.logout();
-}
+//   }
+//   logout() {
+//     console.log("logout")
+//     this.authenticationService.logout();
+// }
 
-getNav(){
-  console.log(navData)
-  this.data=navData
-  console.log("nav"+this.data)
+// getNav(){
+//   console.log(navData)
+//   this.data=navData
+//   console.log("nav"+this.data)
  
-}
+// }
 
+// }
+
+
+openSidebar: boolean = true;
+menuSidebar=menuSidebar;
+  constructor() { }
+
+  ngOnInit() {
+
+  }
+
+  showSubmenu(itemEl: HTMLElement) {
+    itemEl.classList.toggle("showMenu");
+  }
 }

@@ -10,8 +10,11 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from 'src/layout/sidebar/sidebar.component';
+// import { PagesModule } from '../pages.module';
+// import { SidebarComponent } from 'src/layout/sidebar/sidebar.component';
 import { AddParentsComponent } from './add-parents/add-parents.component';
+import { LayoutModule } from 'src/layout/layout.module';
+
 @NgModule({
   declarations: [
     StudentAttendanceComponent,
@@ -20,7 +23,7 @@ import { AddParentsComponent } from './add-parents/add-parents.component';
     StudentListComponent,
     AddStudentComponent,
     NavbarComponent,
-    SidebarComponent,
+    // SidebarComponent,
     AddParentsComponent
   ],
   imports: [
@@ -29,10 +32,12 @@ import { AddParentsComponent } from './add-parents/add-parents.component';
     StudentInfoRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    LayoutModule,
     NgSelectModule,
     StudentInfoRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    // PagesModule,
     MaterialModule,
     CommonModule,
     StudentInfoRoutingModule,
