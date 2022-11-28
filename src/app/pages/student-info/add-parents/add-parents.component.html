@@ -1,0 +1,65 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark last3 " style="border-radius: 50px;">
+    <div class="container">
+       
+      <a class="navbar-brand" href="#">SELECT SIBLINGS </a>
+      
+      <button class="close mt-3  px-3 text-white" mat-button (click)="onNoClick()">X</button>
+    </div>
+  </nav>
+
+
+<div class=" container justify-content-md-center">
+  <div class="mt-3 " mat-dialog-content>
+    <mat-form-field appearance="standard">
+        <mat-label class="info"> Class</mat-label>
+        <mat-select formControlName="class" [(ngModel)]="obj.class" required
+            [ngClass]="{ 'is-invalid': Submitted && f['class'].errors || f['class'].touched&& f['class'].errors }">
+            <mat-option>select class</mat-option>
+            <mat-option *ngFor="let Class of class " [value]="Class.value">
+                {{Class.viewValue}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="Submitted && f['class'].errors|| f['class'].touched&& f['class'].errors">
+            Please select a class</mat-error>
+        <mat-hint></mat-hint>
+    </mat-form-field>
+    </div>
+<div class="mt-3">
+    <mat-form-field appearance="standard">
+        <mat-label class="info">section </mat-label>
+        <mat-select formControlName="section" [(ngModel)]="obj.section" required
+            [ngClass]="{ 'is-invalid': Submitted && f['section'].errors || f['section'].touched&& f['section'].errors }">
+            <mat-option>select section</mat-option>
+            <mat-option *ngFor="let sec of section" [value]="sec.value">
+                {{sec.viewValue}}
+            </mat-option>
+
+        </mat-select>
+        <mat-error
+            *ngIf="Submitted && f['section'].errors|| f['section'].touched&& f['section'].errors">
+            Please select a section</mat-error>
+        <mat-hint></mat-hint>
+    </mat-form-field>
+</div>
+<div class="mt-3">
+    <mat-form-field appearance="standard">
+        <mat-label class="info">sbilings</mat-label>
+        <mat-select formControlName="sbilings" [(ngModel)]="obj.sbilings" required
+            [ngClass]="{ 'is-invalid': Submitted && f['sbilings'].errors || f['sbilings'].touched&& f['sbilings'].errors }">
+            <mat-option>select section</mat-option>
+            <mat-option *ngFor="let sbilings of sbilings" [value]="sbilings.value">
+                {{sbilings.viewValue}}
+            </mat-option>
+
+        </mat-select>
+        <mat-error
+            *ngIf="Submitted && f['sbilings'].errors|| f['sbilings'].touched&& f['sbilings'].errors">
+            Please select a section</mat-error>
+        <mat-hint></mat-hint>
+    </mat-form-field>
+    <div class="text-end">
+    <button class="mt-3 mx-2" type="submit" mat-raised-button color="primary">save</button>
+    <button class="mt-3" mat-raised-button (click)="onNoClick()" color="warn">close</button>
+</div>
+</div>

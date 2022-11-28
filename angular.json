@@ -113,6 +113,7 @@
               "node_modules/material-design-icons/iconfont/material-icons.css"
             ],
             "scripts": []
+           
           }
         }
       }
@@ -121,4 +122,5 @@
   "cli": {
     "analytics": "5123c5ec-923d-4745-8893-2648bd2ec924"
   }
+ 
 }

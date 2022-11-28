@@ -1,0 +1,26 @@
+.mat-form-field{
+    width:100%;
+   }
+   .last3{
+    
+    background-image:linear-gradient(rgb(132, 39, 219),rgb(132, 58, 192));
+  }
+   .info{
+    color: rgb(123, 38, 198);
+    font-size: 14px;
+   }
+  
+  .myapp-no-padding-dialog .mat-dialog-container {
+    padding: 0;
+  }
+  .cdk-overlay-pane.my-dialog {
+    position: relative!important;
+  }
+  .close.mat-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    line-height: 14px;
+    min-width: auto;
+  }
