@@ -17,6 +17,7 @@ import { CourseComponent } from './course/course.component';
 import { NewsComponent } from './news/news.component';
 import { AccountRoutingModule } from './account-routing.module';
 import { MaterialModule } from './../app/material/material.module';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { MaterialModule } from './../app/material/material.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MaterialModule  ],
+    MaterialModule ,
+    MatTableModule
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
