@@ -9,6 +9,10 @@ import { StudentGroupComponent } from './student-group/student-group.component';
 import { MaterialModule } from 'src/app/material/material.module';
 import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
+
+
+
+
 @NgModule({
   declarations: [
     StudentAttendanceComponent,

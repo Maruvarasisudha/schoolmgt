@@ -12,8 +12,8 @@ const routes: Routes = [
     path: "student-info",
     children: [
       {path:'student-attendance',component:StudentAttendanceComponent},
-      {path:"attendancereport",component:StudentAttendanceReportComponent},
-      {path:"studentgroup",component:StudentGroupComponent},
+      {path:"student-attendance-report",component:StudentAttendanceReportComponent},
+      {path:"student-group",component:StudentGroupComponent},
       {path:"student-list",component:StudentListComponent},
       {path:"add-student",component:AddStudentComponent}
     ],

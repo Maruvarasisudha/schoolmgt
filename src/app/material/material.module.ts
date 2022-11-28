@@ -16,6 +16,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {TextFieldModule} from '@angular/cdk/text-field';
 @NgModule({
   declarations: [],
   imports: [
@@ -35,6 +36,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatToolbarModule,
     MatBadgeModule,
     MatProgressBarModule,
+    TextFieldModule,
   ],
   exports:[
     MaterialRoutingModule,
@@ -52,6 +54,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatToolbarModule,
     MatBadgeModule,
     MatProgressBarModule,
+    TextFieldModule,
   ]
 })
 export class MaterialModule { }
