@@ -27,7 +27,7 @@ import { MainComponent } from './main/main.component';
      ReactiveFormsModule,
      LayoutModule,
     FormsModule,
-    // StudentInfoModule,
+    StudentInfoModule,
     BrowserAnimationsModule,
     MaterialModule,
     // SidebarModule

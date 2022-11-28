@@ -200,7 +200,7 @@
         rgb(232, 228, 233) 90%
     );
     /* background-image: radial-gradient(circle farthest-corner at 7.2% 13.6%, #25f9f5 0%, #0846da 90%); */
-    height: auto;
+    height: 100vh;
     left: 260px;
     width: calc(100% - 260px);
     transition: all 0.5s ease;
@@ -384,7 +384,7 @@
   .sidebar .nav-links li .sub-menu {
     padding: 6px 6px 14px 60px;
     /* margin-top: -10px; */
-    background: rgb(153, 116, 116);
+    background: rgb(44, 41, 41);
     display: none;
     transition: all 0.4s ease;
   }
