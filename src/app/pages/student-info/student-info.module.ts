@@ -9,17 +9,19 @@ import { StudentGroupComponent } from './student-group/student-group.component';
 import { MaterialModule } from 'src/app/material/material.module';
 import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
-
-
-
-
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from 'src/layout/sidebar/sidebar.component';
+import { AddParentsComponent } from './add-parents/add-parents.component';
 @NgModule({
   declarations: [
     StudentAttendanceComponent,
     StudentAttendanceReportComponent,
     StudentGroupComponent,
     StudentListComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    NavbarComponent,
+    SidebarComponent,
+    AddParentsComponent
   ],
   imports: [
 

@@ -27,8 +27,8 @@
    }
 
    .last3{
-    
     background-image:linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+    
    
    }
    .last2{
@@ -69,3 +69,18 @@
     font-size: 17px;
     margin-bottom: -7px;
   }
+  .lasts{
+    color: rgb(83, 19, 151);
+    font-size: 14px;
+    font-weight: bold;
+    
+  }
+  .info{
+    color: rgb(87, 42, 159);
+    font-size: 14px;
+   }
+   ::-webkit-input-placeholder { color: rgb(87, 42, 159);
+    font-size: 14px;
+    font-weight: bold;}
+    
+    

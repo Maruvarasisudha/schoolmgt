@@ -13,12 +13,12 @@ export const MENU: MenuItem[] = [
     }, {
         id: 3,
         label: 'course',
-        link: '/dashboard',
+        link: '/course',
     },
     {
         id: 4,
         label: 'News',
-        link: '/dashboard',
+        link: '/news',
     }, {
         id: 5,
         label: 'Contact',

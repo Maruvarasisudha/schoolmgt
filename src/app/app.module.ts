@@ -11,6 +11,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutRoutingModule } from './../layout/layout-routing.module';
 import { PagesModule } from './../app/pages/pages.module';
+import { PagesRoutingModule } from './pages/pages-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { AccountModule } from 'src/account/account.module';
@@ -20,6 +21,7 @@ import { AccountRoutingModule } from 'src/account/account-routing.module';
   declarations: [
     AppComponent,
     AppComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { AccountRoutingModule } from 'src/account/account-routing.module';
     AccountModule,
     AccountRoutingModule,
     PagesModule,
+    PagesRoutingModule,
     AccountModule,
     MaterialModule,
     AccountModule,

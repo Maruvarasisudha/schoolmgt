@@ -1,127 +1,601 @@
-<div class="container mt-5 ">
-    <div class="shadow  pb-3 pt-4   px-3 bg-body rounded">
+<div class="container mt-5  px-5">
+    <div class="shadow  pb-3 pt-4 px-3 bg-body rounded">
         <div class="row">
-            <div class="col">
-                <h4 class="text-start last"><b class="margin">STUDENT ADMISSION</b></h4></div>
-                    
-                <div class="col text-end" id="last">Dashboard | Student Information | <b>Student List</b></div>
-                
+            <div class="col-sm-12 col-md-4 col-lg-6">
+                <h4 class="text-start last"><b class="margin">STUDENT ADMISSION</b></h4>
             </div>
+
+            <div class="col-sm-12 col-md-8 col-lg-6 " id="last">Dashboard | Student Information | <b>Student List</b></div>
+
         </div>
-    
+    </div>
+
     <div class="row mt-5  px-3">
-        <div class="col">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 ">
             <p class="last2"> <b>Add Student</b></p>
         </div>
-        <div class="col text-end">
-            <button class="btn last3 fs-6 text-white rounded-pill" type="button" routerLink="./../add-student"> + IMPORT STUDENT </button>
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6  text-end">
+            <button class="btn last3 fs-6 text-white rounded-pill" type="button" routerLink="./../add-student"> + IMPORT
+                STUDENT </button>
         </div>
     </div>
 </div>
-<div class="container mt-5 ">
+<div class="container mt-5  px-5 ">
     <div class="shadow justify-content-md-center px-4  py-3 mt-3 bg-body rounded ">
-       <p class="last fs-6">PERSONAL INFO</p>
-   <hr>
-   <form (ngSubmit)="onSubmit()" [formGroup]="studentForm">
-    <div class="row mt-3">
-        
-        <div class="col mt-4">
-            <mat-form-field class="example-full-width">
-                <mat-label class="info">Admission Number</mat-label>
-                <input matInput>
-            </mat-form-field>
-        </div>
-     <div class="col mt-2">
-           <mat-form-field appearance="standard">
-                <mat-label class="info"> Class</mat-label>
-                <mat-select formControlName="class" [(ngModel)]="obj.class" required
-                    [ngClass]="{ 'is-invalid': Submitted && f['class'].errors || f['class'].touched&& f['class'].errors }">
-                    <mat-option>select class</mat-option>
-                    <mat-option *ngFor="let Class of stand" [value]="Class.value">
-                        {{Class.viewValue}}
-                    </mat-option>
-                </mat-select>
-                <mat-error *ngIf="Submitted && f['class'].errors|| f['class'].touched&& f['class'].errors">
-                    Please select a class</mat-error>
-                <mat-hint></mat-hint>
-            </mat-form-field>
-        </div>
-        <div class="col  mt-2">
-            <mat-form-field appearance="standard">
-                <mat-label class="info">section </mat-label>
-                <mat-select formControlName="section" [(ngModel)]="obj.section" required
-                    [ngClass]="{ 'is-invalid': Submitted && f['section'].errors || f['section'].touched&& f['section'].errors }">
-                    <mat-option>select section</mat-option>
-                    <mat-option *ngFor="let sec of sec" [value]="sec.value">
-                        {{sec.viewValue}}S
-                    </mat-option>
-                    
-                   </mat-select>
-                <mat-error
-                    *ngIf="Submitted && f['section'].errors|| f['section'].touched&& f['section'].errors">
-                    Please select a section</mat-error>
-                <mat-hint></mat-hint>
-            </mat-form-field>
-        </div>
-       
-        <div class="col mt-4">
-            <mat-form-field class="example-full-width">
-                <mat-label class="info">Roll Number</mat-label>
-                <input matInput >
-            </mat-form-field>
-        </div>
-    </div>
+        <p class="last fs-6">PERSONAL INFO</p>
+        <hr>
+        <form (ngSubmit)="onSubmit()" [formGroup]="studentForm">
+            <div class="row mt-3">
+
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-4">
+                    <mat-form-field class="example-full-width">
+                        <mat-label class="info">Admission Number</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-2">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info"> Class</mat-label>
+                        <mat-select formControlName="class" [(ngModel)]="obj.class" required
+                            [ngClass]="{ 'is-invalid': Submitted && f['class'].errors || f['class'].touched&& f['class'].errors }">
+                            <mat-option>select class</mat-option>
+                            <mat-option *ngFor="let Class of stand" [value]="Class.value">
+                                {{Class.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="Submitted && f['class'].errors|| f['class'].touched&& f['class'].errors">
+                            Please select a class</mat-error>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-2">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">section </mat-label>
+                        <mat-select formControlName="section" [(ngModel)]="obj.section" required
+                            [ngClass]="{ 'is-invalid': Submitted && f['section'].errors || f['section'].touched&& f['section'].errors }">
+                            <mat-option>select section</mat-option>
+                            <mat-option *ngFor="let sec of sec" [value]="sec.value">
+                                {{sec.viewValue}}
+                            </mat-option>
+
+                        </mat-select>
+                        <mat-error
+                            *ngIf="Submitted && f['section'].errors|| f['section'].touched&& f['section'].errors">
+                            Please select a section</mat-error>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-4">
+                    <mat-form-field class="example-full-width">
+                        <mat-label class="info">Roll Number</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-4 ">
+                    <mat-form-field class="example-full-width">
+                        <mat-label class="info">First Name</mat-label>
+                        <input matInput formControlName="firstName" [(ngModel)]="obj.firstName" required
+                            [ngClass]="{ 'is-invalid': Submitted && f['firstName'].errors || f['firstName'].touched&& f['firstName'].errors }">
+                        <mat-error
+                            *ngIf="Submitted && f['firstName'].errors|| f['firstName'].touched&& f['firstName'].errors">
+                            Please Enter Your FirstName</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-4 ">
+                    <mat-form-field class="example-full-width">
+                        <mat-label class="info"> Last Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-2 ">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Gender</mat-label>
+                        <mat-select formControlName="gender" [(ngModel)]="obj.gender" required
+                            [ngClass]="{ 'is-invalid': Submitted && f['gender'].errors || f['gender'].touched&& f['gender'].errors }">
+                            <mat-option>Gender</mat-option>
+                            <mat-option *ngFor="let gender of sece" [value]="gender.value">
+                                {{gender.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="Submitted && f['gender'].errors|| f['gender'].touched&& f['gender'].errors">
+                            Please select Your Gender</mat-error>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-4 ">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" formControlName="date" [(ngModel)]="obj.date" required
+                            [ngClass]="{ 'is-invalid': Submitted && f['date'].errors || f['date'].touched&& f['date'].errors }">
+                        <mat-label class="info"> Date of Birth</mat-label>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker>
+                            <mat-datepicker-actions>
+                                <button mat-button matDatepickerCancel>Cancel</button>
+                                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                            </mat-datepicker-actions>
+
+                        </mat-datepicker>
+                        <mat-error *ngIf="Submitted && f['date'].errors|| f['date'].touched&& f['date'].errors">
+                            Please select Your date of birth</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">BloodGroup</mat-label>
+                        <mat-select formControlName="bloodgroup" [(ngModel)]="obj.bloodgroup">
+                            <mat-option>bloodgroup</mat-option>
+                            <mat-option *ngFor="let bloodgroup of group" [value]="bloodgroup.value">
+                                {{bloodgroup.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Religion</mat-label>
+                        <mat-select formControlName="religion" [(ngModel)]="obj.religion">
+
+                            <mat-option>Religion</mat-option>
+                            <mat-option *ngFor="let religion of religions" [value]="religion.value">
+                                {{religion.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">cast</mat-label>
+                        <input matInput>
+
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Email</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Phone Number</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+
+                <!-- <mat-form-field>
+                            <input matInput [matDatepicker]="picker" formControlName="addmission">
+                            <mat-label class="info">Admission Date </mat-label>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker>
+                                <mat-datepicker-actions>
+                                    <button mat-button matDatepickerCancel>Cancel</button>
+                                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                                </mat-datepicker-actions>
+
+                            </mat-datepicker>
+                            
+                        </mat-form-field>--->
+
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Category</mat-label>
+                        <mat-select formControlName="Category" [(ngModel)]="obj.Category">
+                            <mat-option>Category</mat-option>
+                            <mat-option *ngFor="let Category of cate" [value]="Category.value">
+                                {{Category.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Height(IN)</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">weight(KG)</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">AcademicYear</mat-label>
+                        <mat-select formControlName="academicYear" [(ngModel)]="obj.academicYear" formControlName="section"  required
+                        [ngClass]="{ 'is-invalid': Submitted && f['academicYear'].errors || f['academicYear'].touched&& f['academicYear'].errors }">
+                            <mat-option>AcademicYear</mat-option>
+                            <mat-option *ngFor="let academicYear of academicYear" [value]="academicYear.value">
+                                {{academicYear.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="Submitted && f['academicYear'].errors|| f['academicYear'].touched&& f['academicYear'].errors">
+                            Please select a Year</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <!-- <mat-form-field>
+                                <div>
+                                  <mat-toolbar>
+                                   
+                                    <input matInput [(ngModel)]="fileAttr" readonly name="name" />
+                                   
+                                    <button mat-flat-button color="primary">Browse File</button>
+                                  </mat-toolbar>
+                                 
+                                  <input
+                                    type="file"
+                                    #fileInput
+                                    id="uploadFile"
+                                    (change)="uploadFileEvt($event)"
+                                    name="uploadFile"
+                                    multiple="multiple"
+                                    accept="image/*"
+                                  />
+                                </div>
+                              </mat-form-field> -->
+
+
+
+                    <div class="input-group custom-file-button mt-4">
+
+                        <input type="file" class="form-control" id="inputGroupFile" formControlName="browse0"
+                            style="border:1px solid gray;border-radius: 50px;">
+
+                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                                " for="inputGroupFile">Browse</label>
+
+                    </div>
+                </div>
+                
+                  
+                  
+                
+
+            </div>
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <p class="last mt-4 fs-6">PARENTS & GUARDIAN INFO</p></div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 text-end">
+                
+                    <button class="btn last3 fs-6 text-white  rounded-pill" type="button"
+                    (click)="openDialog()"> + ADD PARENTS
+                    </button>
+                
+            </div>
+            </div>
+            <hr>
+                
+           
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Father Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Occupation</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Father Phone</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <div class="input-group custom-file-button mt-4">
+                        <input type="file" class="form-control" id="inputType" formControlName="browse1"
+                            style="border:1px solid gray;border-radius: 50px;">
+                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                " for="inputType">Browse</label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Mother Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Occupation</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Mother Phone</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <div class="input-group custom-file-button mt-4">
+                        <input type="file" class="form-control"  id="inputType" formControlName="browser2"
+                            style="border:1px solid gray;border-radius: 50px;">
+                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                " for="inputGroupFile">Browse</label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <span class="info fs-6 pr-4">RELATION WITH GUARDIAN:</span>
+                <label class="radio-container"> Father
+                    <input type="radio" checked="checked" name="radio">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="radio-container"> Mother
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="radio-container"> Others
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info"> Guardian Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Relation With Guardian</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Guardian Email</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <div class="input-group custom-file-button mt-4">
+                        <input type="file" class="form-control"  id="inputType" formControlName="browser5"
+                            style="border:1px solid gray;border-radius: 50px;">
+                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                " for="inputGroupFile">Browse</label>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info"> Guardian Phone</mat-label>
+                        <input matInput  formControlName="guardianno" [(ngModel)]="obj. guardianno" required
+                        [ngClass]="{ 'is-invalid': Submitted && f['guardianno'].errors || f['guardianno'].touched&& f['guardianno'].errors }">
+                        <mat-error *ngIf="Submitted && f['guardianno'].errors|| f['guardianno'].touched&& f['guardianno'].errors">
+                            Please Enter valid Phonenumber</mat-error>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Guardian Occupation</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Guardian Address</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+            <p class="last mt-4 fs-6">STUDENT ADDRESS INFO</p>
+            <hr>
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                <mat-form-field appearance="standard">
+                    <mat-label class="info">Current Address</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                <mat-form-field appearance="standard">
+                    <mat-label class="info">Permanent Address</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            </div>
+            <p class="last mt-4 fs-6">TRANSPORT</p>
+            <hr>
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                <mat-form-field appearance="standard">
+                    <mat-label class="info">ROUTE LIST</mat-label>
+                    <mat-select formControlName="routelist" [(ngModel)]="obj.routelist">
+                        <mat-option>ROUTE LIST</mat-option>
+                        <mat-option *ngFor="let routelist of routelist" [value]="routelist.value">
+                            {{ routelist.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint></mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                <mat-form-field appearance="standard">
+                    <mat-label class="info">VEHICLE NUMBER</mat-label>
+                    <mat-select formControlName="vihiecleno" [(ngModel)]="obj.vihiecleno">
+                        <mat-option>VEHICLE NUMBER</mat-option>
+                        <mat-option *ngFor="let vihiecleno of vihiecleno" [value]="vihiecleno.value">
+                            {{vihiecleno.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint></mat-hint>
+                </mat-form-field>
+            </div>
+            </div>
+            <p class="last mt-4 fs-6">OTHER INFO</p>
+            <hr>
+            <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                <mat-form-field appearance="standard">
+                    <mat-label class="info">DORMITORY NAME</mat-label>
+                    <mat-select formControlName="dormitory" [(ngModel)]="obj.dormitory">
+                        <mat-option>DORMITORY NAME</mat-option>
+                        <mat-option *ngFor="let dormitory of dormitory" [value]="dormitory.value">
+                            {{dormitory.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint></mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                <mat-form-field appearance="standard">
+                    <mat-label class="info">ROOM NUMBER</mat-label>
+                    <mat-select formControlName="roomno" [(ngModel)]="obj.roomno">
+                        <mat-option>ROOM NUMBER</mat-option>
+                        <mat-option *ngFor="let roomno of roomno" [value]="roomno.value">
+                            {{roomno.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint></mat-hint>
+                </mat-form-field>
+            </div>
+            </div>
+            <p class="last mt-4 fs-6">OTHER INFO</p>
+
+            <hr>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">NATIONAL NUMBER</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">BIRTH CERTIFICATE NUMBER</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">BANK ACCOUNT NUMBER</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">BANKNAME</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <mat-form-field appearance="standard">
+                            <mat-label class="info">PREVIOUS SCHOOL DETAILS</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <mat-form-field appearance="standard">
+                            <mat-label class="info">ADDITIONAL NOTES</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                        <mat-form-field appearance="standard">
+                            <mat-label class="info">DOCUMENT 01 TITLE</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                        <mat-form-field appearance="standard">
+                            <mat-label class="info">DOCUMENT 02 TITLE</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                        <mat-form-field appearance="standard">
+                            <mat-label class="info">DOCUMENT 03 TITLE</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                        <mat-form-field appearance="standard">
+                            <mat-label class="info">DOCUMENT 04 TITLE</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                        <div class="input-group custom-file-button mt-4">
+                            <input type="file" class="form-control" id="inputType"  formControlName="browse3"
+                                style="border:1px solid gray;border-radius: 50px;">
+                            <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                    " for="inputGroupFile">Browse</label>
     
-    <div class="row">
-     <div class="col mt-4 ">
-            <mat-form-field class="example-full-width">
-                <mat-label class="info">First Name</mat-label>
-                <input matInput formControlName="firstName" [(ngModel)]="obj.firstName" required
-                [ngClass]="{ 'is-invalid': Submitted && f['firstName'].errors || f['firstName'].touched&& f['firstName'].errors }">
-                <mat-error *ngIf="Submitted && f['firstName'].errors|| f['firstName'].touched&& f['firstName'].errors">
-                    Please Enter Your FirstName</mat-error>
-            </mat-form-field>
-        </div> 
-        <div class="col mt-4 ">
-            <mat-form-field class="example-full-width">
-                <mat-label class="info"> Last Name</mat-label>
-                <input matInput>
-            </mat-form-field>
-        </div> 
-        <div class="col mt-2 ">
-            <mat-form-field appearance="standard">
-                <mat-label class="info">Gender</mat-label>
-                <mat-select formControlName="gender" [(ngModel)]="obj.gender" required
-                    [ngClass]="{ 'is-invalid': Submitted && f['gender'].errors || f['gender'].touched&& f['gender'].errors }">
-                    <mat-option>Gender</mat-option>
-                    <mat-option *ngFor="let gender of sece" [value]="gender.value">
-                        {{gender.viewValue}}
-                    </mat-option>
-                   </mat-select>
-                <mat-error
-                    *ngIf="Submitted && f['gender'].errors|| f['gender'].touched&& f['gender'].errors">
-                    Please select Your Gender</mat-error>
-                <mat-hint></mat-hint>
-            </mat-form-field>
-        </div> 
-        <div class="col mt-4 ">
-            <!-- <mat-form-field  >
-                <input matInput [matDatepicker]="picker">
-                <mat-label class="info">choose a Date</mat-label>
-                <mat-datepicker-toggle matSuffix [for]="picker" formControlName="datePicker" [(ngModel)]="obj.datepicker" required
-                [ngClass]="{ 'is-invalid': Submitted && f['datepicker'].errors || f['datepicker'].touched&& f['datepicker'].errors }"></mat-datepicker-toggle>
-                <mat-datepicker #picker>
-                  <mat-datepicker-actions>
-                    <button mat-button matDatepickerCancel>Cancel</button>
-                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                  </mat-datepicker-actions>
-                </mat-datepicker>
-                <mat-error
-                *ngIf="Submitted && f['datepicker'].errors|| f['datepicker'].touched&& f['datepicker'].errors">
-                Please select Your Gender</mat-error>
-              </mat-form-field> -->
-        </div> 
-     </div>
-   
-   </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                        <div class="input-group custom-file-button mt-4">
+                            <input type="file" class="form-control" id="inputType"  formControlName="browse4"
+                                style="border:1px solid gray;border-radius: 50px;">
+                            <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                    " for="inputGroupFile">Browse</label>
+    
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                        <div class="input-group custom-file-button mt-4">
+                            <input type="file" class="form-control" id="inputType"  formControlName="browse5"
+                                style="border:1px solid gray;border-radius: 50px;">
+                            <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                    " for="inputGroupFile">Browse</label>
+    
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                        <div class="input-group custom-file-button mt-4">
+                            <input type="file" class="form-control" id="inputType"  formControlName="browse6"
+                                style="border:1px solid gray;border-radius: 50px;">
+                            <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                    " for="inputGroupFile">Browse</label>
+    
+                        </div>
+                    </div>
+                </div>
+            
+           
+           
+                <div class="d-grid gap-2 px-4 mt-5 d-md-flex justify-content-md-center">
+                    <button type="save" class="btn last3 text-white px-5 fw-bold pt-2 pb-2" type="button ">SAVE</button>
+                
+            </div>
+        </form>
+
+    </div>
+
 </div>

@@ -6,10 +6,10 @@ import { StudentGroupComponent } from './student-group/student-group.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { GuardGuard } from 'src/account/core/guards/guard.guard';
-
+import { NavbarComponent } from './navbar/navbar.component';
 const routes: Routes = [
   {
-    path: "student-info",
+    path: "student-info",component: NavbarComponent,
     children: [
       {path:'student-attendance',component:StudentAttendanceComponent},
       {path:"student-attendance-report",component:StudentAttendanceReportComponent},
@@ -17,7 +17,7 @@ const routes: Routes = [
       {path:"student-list",component:StudentListComponent},
       {path:"add-student",component:AddStudentComponent}
     ],
-    canActivate:[GuardGuard]
+    //  canActivate:[GuardGuard]
   }
 ];
 

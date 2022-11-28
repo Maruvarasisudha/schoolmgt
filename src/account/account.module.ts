@@ -16,6 +16,7 @@ import { FooterComponent } from 'src/layout/footer/footer.component';
 import { CourseComponent } from './course/course.component';
 import { NewsComponent } from './news/news.component';
 import { AccountRoutingModule } from './account-routing.module';
+import { MaterialModule } from './../app/material/material.module';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,8 @@ import { AccountRoutingModule } from './account-routing.module';
     AccountRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    MaterialModule  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
