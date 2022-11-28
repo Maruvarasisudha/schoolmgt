@@ -1,79 +1,125 @@
-<div class="container-fluid ">
-  <div class="card mx-5 mt-4 p-2 mt-5" style="border: none; border-radius: 10px; box-shadow: 1px 1px 10px #888888;">
-    <div class="row justify-content-between px-2 ">
-      <div class="col mt-2">
-        <h6 style="color:rgb(73, 8, 95)"><b>STUDENTATTENDANCE</b></h6>
+<div class="container mt-5 ">
+  <div class="shadow  pb-3 pt-4   px-3 bg-body rounded">
+    <div class="row">
+      <div class="col">
+        <h4 class="text-start last"><b class="margin">STUDENT ATTENDANCE</b></h4>
       </div>
-      <div class="col my-auto mt-2 text-end">
-        <a class="mx-2" style="text-decoration:none;color:rgb(85, 12, 108);" href="#">Dashboard </a>|
-        <a class="mx-2" style="text-decoration:none;color:rgb(68, 12, 82)" href="#">Student Info </a>|
-        <a style="text-decoration:none;color:rgb(59, 5, 75)" href="#">Student Attendance </a>
+      <div class="col text-end" id="last">Dashboard | Student Info | <b>Student Attendance</b></div>
+    </div>
+  </div>
+
+  <div class="row mt-5  px-3">
+    <div class="col">
+      <p class="last2">Select Criteria</p>
+    </div>
+
+    <div class="col text-end">
+      <button class="btn last3 fs-6 text-white rounded-pill" type="button"> +IMPORT ATTENDANCE</button>
+    </div>
+  </div>
+</div>
+<div class="container mt-5 ">
+  <div class="shadow justify-content-md-center px-4  py-3 mt-3 bg-body rounded ">
+    <form (ngSubmit)="onSubmit()" [formGroup]="studentattendanceForm">
+      <div class="row mt-3">
+        <div class="col mt-2">
+          <mat-form-field appearance="standard">
+            <mat-label class="info"> Class</mat-label>
+            <mat-select formControlName="class" [(ngModel)]="obj.class" required
+              [ngClass]="{ 'is-invalid': Submitted && f['class'].errors || f['class'].touched&& f['class'].errors }">
+              <mat-option>select class</mat-option>
+              <mat-option *ngFor="let Class of stand" [value]="Class.value">
+                {{Class.viewValue}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="Submitted && f['class'].errors|| f['class'].touched&& f['class'].errors">
+              Please select a class</mat-error>
+            <mat-hint></mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="col mt-2">
+          <mat-form-field appearance="standard">
+            <mat-label class="info">section </mat-label>
+            <mat-select formControlName="section" [(ngModel)]="obj.section" required
+              [ngClass]="{ 'is-invalid': Submitted && f['section'].errors || f['section'].touched&& f['section'].errors }">
+              <mat-option>select section</mat-option>
+              <mat-option *ngFor="let sec of sec" [value]="sec.value">
+                {{sec.viewValue}}
+              </mat-option>
+
+            </mat-select>
+            <mat-error *ngIf="Submitted && f['section'].errors|| f['section'].touched&& f['section'].errors">
+              Please select a section</mat-error>
+            <mat-hint></mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4 mt-3 col-md-10">
+
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Attendance Date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker>
+              <mat-datepicker-actions>
+                <button mat-button mat-raised-button color="warn" matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-15 mx-4 px-5 text-end ">
+
+          <button type="button" class="btn last1 text-white badge btn px-2 py-2 rounded-pill">
+            <i class='bx bx-search'></i>
+
+            SEARCH
+          </button>
+
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row mt-5  px-3">
+    <div class="col">
+      <p class="last2"><b>Student Attendance </b> | Class:1 st class,Section: A1,Date:Thursday 24th of November 2022</p>
+      <div class="col text-end" id="last"></div>
+      <div class="row mt-5  px-3">
+        <div class="col">
+          <button class="btn last3 fs-6 text-white rectangle-pill" type="button">
+            <i class='bx bx-square'></i>
+            MARK HOLIDAY</button>
+        </div>
+        <div class="col text-end">
+          <button class="btn last3 fs-6 text-white rectangle-pill" type="button">
+
+            SAVE ATTENDANCE </button>
+
+        </div>
       </div>
     </div>
   </div>
-</div><br>
-<div class="row justify-content-between mx-4 p-2">
-
-  <div class="col-lg-1 px-10 text-end ">
-    <h6 style="color:rgb(53, 5, 84)">SELECTCRITERIA</h6>
-  </div>
-  <div class="col-lg-3 mx-4 text-end ">
-
-    <button type="button " class="btn last1 text-white badge btn px-2 py-2 rounded-pill">
-
-      +IMPORT ATTENDANCE
-
-    </button>
-
-  </div>
-
-  <div class="container-fluid ">
-
-    <div class="card mx-3 mt-4" style="border: none; border-radius: 10px; box-shadow: 1px 1px 10px #888888;">
-
-      <div class="container my-4">
-
-        <div class="row mx-5 ">
-          <div class="col-lg-4 col-md-10">
-            <mat-form-field appearance="standard">
-
-              <mat-label>Select Class*</mat-label>
-              <mat-select>
-                <mat-option>None</mat-option>
-                <mat-option *ngFor="let class of classes" [value]="class">{{class}}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="col-lg-4 col-md-10">
-            <mat-form-field appearance="standard">
-              <mat-label>Select section*</mat-label>
-              <mat-select>
-                <mat-option>None</mat-option>
-                <mat-option *ngFor="let section of sections" [value]="section">{{section}}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="col-lg-4 mt-3 col-md-10">
-
-            <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Attendance Date">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker>
-                <mat-datepicker-actions>
-                  <button mat-button mat-raised-button color="warn" matDatepickerCancel>Cancel</button>
-                  <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                </mat-datepicker-actions>
-              </mat-datepicker>
-            </mat-form-field>
-          </div>
+</div>
 
 
-          <div class="col-lg-15 mx-4 px-5 text-end ">
+<table class="table table-stripped mat-elevation-z8 demo-table">
 
-            <button type="button" class="btn last1 text-white badge btn px-2 py-2 rounded-pill">
-              <i class='bx bx-search'></i>
-
-              SEARCH
-            </button>
-
-          </div>
+  <ng-container>
+    <th >No.</th>
+    <td >1</td>
+  </ng-container>
+  <ng-container>
+    <th >Addmission No</th>
+    <td >6767</td>
+  </ng-container>
+  <ng-container>
+    <th >Student Name</th>
+    <td >Varshini</td>
+  </ng-container>
+  <ng-container>
+    <th >Roll No</th>
+    <td >700009</td>
+  </ng-container>
+  <ng-container>
+    <th >Attenence</th>
+    <td >tick</td>
+  </ng-container>
+</table>

@@ -1,6 +1,6 @@
 import { MenuItem } from "./menu.module";
 export const MENU: MenuItem[] = [
-  
+
     {
         id: 1,
         label: 'Home',
@@ -9,16 +9,16 @@ export const MENU: MenuItem[] = [
         id: 2,
         label: 'About',
         link: '/about',
-    
+
     }, {
         id: 3,
-        label: 'course',
-        link: '/dashboard',
+        label: 'Course',
+        link: '/course',
     },
     {
         id: 4,
         label: 'News',
-        link: '/dashboard',
+        link: '/news',
     }, {
         id: 5,
         label: 'Contact',

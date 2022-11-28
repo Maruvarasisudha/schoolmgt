@@ -17,7 +17,7 @@ export interface PeriodicElement {
   position: number;
   weight: number;
   symbol: string;
-  
+
 }
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
@@ -52,13 +52,13 @@ export class StudentListComponent implements OnInit {
   public Submitted = false;
   obj: any = {};
 
-  
+
   stand: Stand[] = [
     { value: '1-st class-0', viewValue: '1-st class' },
     { value: '2-nd class-1', viewValue: '2-nd class' },
 
   ];
- 
+
   sec: Sec[] = [
     { value: 'sec-A-0', viewValue: 'sec-A' },
     { value: 'sec-B-1', viewValue: 'sec-B' },
@@ -74,7 +74,7 @@ export class StudentListComponent implements OnInit {
       class: ['', Validators.required],
       section: ['', Validators.required],
 
-    }) 
+    })
   }
   get f(): { [key: string]: AbstractControl } {
     return this.studentForm.controls;
@@ -89,12 +89,12 @@ export class StudentListComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'action'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
-  
-  
+
+
   applyFilter(event:Event){
     const filterValue=(event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  
+
 
 }
