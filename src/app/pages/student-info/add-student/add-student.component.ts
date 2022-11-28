@@ -6,6 +6,8 @@ import * as $ from "jquery";
 import {  ViewChild, ElementRef } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AddParentsComponent } from './../add-parents/add-parents.component';
+import { StudentListService } from '../student-list.service';
+
 var filename:any
 interface Stand {
   value: string;
@@ -19,7 +21,7 @@ interface Gender {
   value: string;
   viewValue: string;
 }
-interface group {
+interface bloodGroup {
   value: string;
   viewValue: string;
 }
@@ -128,7 +130,7 @@ stand: Stand[] = [
     { value: 'Others', viewValue: 'Others' },
 
   ];
-  academicYear = [
+  academicYearId = [
     { value: '2020-0', viewValue: '2020' },
     { value: '2021-1', viewValue: '2021' },
     { value: '2022-2', viewValue: '2022' },
@@ -140,7 +142,7 @@ stand: Stand[] = [
     { value: 'Others-2', viewValue: 'Others' },
 
   ];
-  group: group[] = [
+  bloodGroup: bloodGroup[] = [
     { value: 'A+-0', viewValue: 'A+' },
     { value: 'O+-1', viewValue: 'O+' },
     { value: 'B+-2', viewValue: 'B+' },
@@ -164,7 +166,8 @@ stand: Stand[] = [
   constructor(private fb: FormBuilder,
     private route: Router,
     private router: ActivatedRoute,
-    private dialog:MatDialog
+    private dialog:MatDialog,
+    private service: StudentListService
     ) { }
 
   ngOnInit(): void {
@@ -173,25 +176,26 @@ stand: Stand[] = [
       section: ['', Validators.required],
       firstName:['', Validators.required],
       gender:['', Validators.required],
-      date:['', Validators.required],
-      bloodgroup:['', ],
+      dateOfBirth:['', Validators.required],
+      bloodGroup:['', ],
       religion:['',],
       Category:[''],
-      academicYear:['',Validators.required],
+      academicYearId:['',Validators.required],
       guardianno:['',Validators.required],
       routelist:['', ],
       dormitory :['',],
       vihiecleno:[''],
       roomno:[''],
       browse0:[''],
-      browse1:[''],
+      browssss:[''],
       browser2:[''],
       browser4:[''],
       browse3:[''],
       browse4:[''],
       browser5:[''],
       browse5:[''],
-      browse6:['']
+      browse6:[''],
+      browser7:['']
      } )
   
   }
@@ -203,6 +207,16 @@ stand: Stand[] = [
   onSubmit() {
     
     this.Submitted = true;
+    console.log(this.studentForm.value)
+if( this.studentForm.invalid){
+return;
+}
+else{
+  this.service.createstudent(this.studentForm.value).subscribe((res) => {
+    
+  });
+}
+
   }
   openDialog(){
     this.dialog.open(AddParentsComponent, {

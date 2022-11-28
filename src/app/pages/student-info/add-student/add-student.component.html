@@ -108,8 +108,8 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-4 ">
                     <mat-form-field>
-                        <input matInput [matDatepicker]="picker" formControlName="date" [(ngModel)]="obj.date" required
-                            [ngClass]="{ 'is-invalid': Submitted && f['date'].errors || f['date'].touched&& f['date'].errors }">
+                        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" [(ngModel)]="obj.dateOfBirth" required
+                            [ngClass]="{ 'is-invalid': Submitted && f['dateOfBirth'].errors || f['dateOfBirth'].touched&& f['dateOfBirth'].errors }">
                         <mat-label class="info"> Date of Birth</mat-label>
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker>
@@ -119,7 +119,7 @@
                             </mat-datepicker-actions>
 
                         </mat-datepicker>
-                        <mat-error *ngIf="Submitted && f['date'].errors|| f['date'].touched&& f['date'].errors">
+                        <mat-error *ngIf="Submitted && f['dateOfBirth'].errors|| f['dateOfBirth'].touched&& f['dateOfBirth'].errors">
                             Please select Your date of birth</mat-error>
                     </mat-form-field>
                 </div>
@@ -128,10 +128,10 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">BloodGroup</mat-label>
-                        <mat-select formControlName="bloodgroup" [(ngModel)]="obj.bloodgroup">
+                        <mat-select formControlName="bloodGroup" [(ngModel)]="obj.bloodGroup">
                             <mat-option>bloodgroup</mat-option>
-                            <mat-option *ngFor="let bloodgroup of group" [value]="bloodgroup.value">
-                                {{bloodgroup.viewValue}}
+                            <mat-option *ngFor="let bloodGroup of bloodGroup" [value]="bloodGroup.value">
+                                {{bloodGroup.viewValue}}
                             </mat-option>
                         </mat-select>
                         <mat-hint></mat-hint>
@@ -172,21 +172,22 @@
                         <input matInput>
                     </mat-form-field>
                 </div>
+                <!-- <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" formControlName="academicYear" [(ngModel)]="obj.academicYear" required
+                         >
+                        <mat-label class="info"> Date of Birth</mat-label>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker>
+                            <mat-datepicker-actions>
+                                <button mat-button matDatepickerCancel>Cancel</button>
+                                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                            </mat-datepicker-actions>
 
-                <!-- <mat-form-field>
-                            <input matInput [matDatepicker]="picker" formControlName="addmission">
-                            <mat-label class="info">Admission Date </mat-label>
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker>
-                                <mat-datepicker-actions>
-                                    <button mat-button matDatepickerCancel>Cancel</button>
-                                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                                </mat-datepicker-actions>
-
-                            </mat-datepicker>
-                            
-                        </mat-form-field>--->
-
+                        </mat-datepicker>
+                        
+                    </mat-form-field>
+                </div> -->
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">Category</mat-label>
@@ -216,14 +217,14 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">AcademicYear</mat-label>
-                        <mat-select formControlName="academicYear" [(ngModel)]="obj.academicYear" formControlName="section"  required
-                        [ngClass]="{ 'is-invalid': Submitted && f['academicYear'].errors || f['academicYear'].touched&& f['academicYear'].errors }">
+                        <mat-select formControlName="academicYearId" [(ngModel)]="obj.academicYearId"   required
+                        [ngClass]="{ 'is-invalid': Submitted && f['academicYearId'].errors || f['academicYearId'].touched&& f['academicYearId'].errors }">
                             <mat-option>AcademicYear</mat-option>
-                            <mat-option *ngFor="let academicYear of academicYear" [value]="academicYear.value">
-                                {{academicYear.viewValue}}
+                            <mat-option *ngFor="let academicYearId of academicYearId" [value]="academicYearId.value">
+                                {{academicYearId.viewValue}}
                             </mat-option>
                         </mat-select>
-                        <mat-error *ngIf="Submitted && f['academicYear'].errors|| f['academicYear'].touched&& f['academicYear'].errors">
+                        <mat-error *ngIf="Submitted && f['academicYearId'].errors|| f['academicYearId'].touched&& f['academicYearId'].errors">
                             Please select a Year</mat-error>
                     </mat-form-field>
                 </div>
@@ -302,10 +303,10 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <div class="input-group custom-file-button mt-4">
-                        <input type="file" class="form-control" id="inputType" formControlName="browse1"
+                        <input type="file" class="form-control" id="inputType" formControlName="browssss"
                             style="border:1px solid gray;border-radius: 50px;">
                         <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
-                " for="inputType">Browse</label>
+                ">Browse</label>
 
                     </div>
                 </div>
@@ -331,10 +332,10 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <div class="input-group custom-file-button mt-4">
-                        <input type="file" class="form-control"  id="inputType" formControlName="browser2"
+                        <input type="file" class="form-control" id="inputType" formControlName="browser5"
                             style="border:1px solid gray;border-radius: 50px;">
                         <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
-                " for="inputGroupFile">Browse</label>
+                ">Browse</label>
 
                     </div>
                 </div>
@@ -375,7 +376,7 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <div class="input-group custom-file-button mt-4">
-                        <input type="file" class="form-control"  id="inputType" formControlName="browser5"
+                        <input type="file" class="form-control"  id="inputType" formControlName="browser7"
                             style="border:1px solid gray;border-radius: 50px;">
                         <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
                 " for="inputGroupFile">Browse</label>
