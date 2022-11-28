@@ -21,7 +21,7 @@
                 <h5 class="mt-5 mb-4 ms-5 headcolr "> <b> Add Student Group</b></h5>
             </div>
             <div class="col-lg-6 col-md-6">
-                <button type="button" class="btn mx-3 mt-5 mb-4 float-end subbtn text-white" data-bs-toggle="modal"
+                <button mat-raised-button class="btn mx-3 mt-5 mb-4 float-end subbtn text-white" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
                     Add Group
                 </button>
@@ -45,11 +45,11 @@
                     <td mat-cell *matCellDef="let element"> {{element.description}} </td>
                 </ng-container>
                 <ng-container matColumnDef="action">
-                    <th mat-header-cell *matHeaderCellDef>Actions</th>
-                    <td mat-cell *matCellDef="let row">
+                    <th mat-header-cell *matHeaderCellDef>Actions</th>                   
+                    <td mat-cell *matCellDef="let row">                      
                         <button class="butt" mat-button [matMenuTriggerFor]="menu">
                             <mat-icon>more_vert</mat-icon>
-                        </button>
+                        </button>                      
                         <mat-menu #menu="matMenu" style="height: 10px;overflow-x: hidden;">
                             <div class="row ps-1">
                                 <div class="col-1">
@@ -67,9 +67,9 @@
                             </div>
                             <div class="row ps-1">
                                 <div class="col-1">
-                                    <mat-cell *matCellDef="let element"> <button mat-icon-button
-                                            (click)="reject(element.id)">
-                                            <mat-icon class="table-delete-icon" color="warn">delete_vert</mat-icon>
+                                    <mat-cell *matCellDef="let element" (click)="reject(element.id)"> <button mat-icon-button
+                                             color="warn"  class="iconbutton">
+                                            <mat-icon>delete</mat-icon>
                                         </button></mat-cell>
                                 </div>
                                 <div class="col-4"><span>Delete</span></div>
@@ -108,8 +108,8 @@
                         </mat-form-field>
                     </div>
                     <div class="modal-footer mt-5">
-                        <button type="reset" class="btn btn-secondary mt-4 mx-2" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn text-white mt-4 mx-2 btn-primary">Save</button>
+                        <button mat-raised-button type="reset" class="btn btn-secondary mt-4 mx-2" data-bs-dismiss="modal">Close</button>
+                        <button mat-raised-button type="submit" class="btn text-white mt-4 mx-2 btn-primary">Save</button>
                     </div>
                 </form>
             </div>

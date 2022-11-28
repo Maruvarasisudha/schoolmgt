@@ -48,7 +48,6 @@ export class StudentGroupComponent implements AfterViewInit,OnInit {
 
 
   ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
   }
 
 
@@ -78,14 +77,18 @@ export class StudentGroupComponent implements AfterViewInit,OnInit {
         this.grouplist = res
         this.studentgrouplist =this.grouplist.data
         this.dataSource = new MatTableDataSource<any>(this.studentgrouplist);
-    
+        this.dataSource.paginator = this.paginator;
+
       })
   }
   reject(id:any){
+    alert("data is deleted")
     this.studentgroup.deleteData(id).subscribe(
       res => {
         this.get()
+      
       })
+    
   }
   
   
