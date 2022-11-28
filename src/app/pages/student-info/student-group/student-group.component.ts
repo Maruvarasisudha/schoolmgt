@@ -10,7 +10,6 @@ export interface PeriodicElement {
   
 }
 const ELEMENT_DATA: PeriodicElement[] = [
- 
 ];
 
 @Component({
@@ -25,7 +24,7 @@ export class StudentGroupComponent implements AfterViewInit,OnInit {
   grouplist: any;
   groupli:any
   displayedColumns: string[] = ['index','groupName','description', 'action'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource = new MatTableDataSource<any>();
 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -78,6 +77,14 @@ export class StudentGroupComponent implements AfterViewInit,OnInit {
         console.log(res)
         this.grouplist = res
         this.groupli =this.grouplist.data
+        this.dataSource = new MatTableDataSource<any>(this.groupli);
+    
+      })
+  }
+  reject(id:any){
+    this.studentgroup.deleteData(id).subscribe(
+      res => {
+        this.get()
       })
   }
   
