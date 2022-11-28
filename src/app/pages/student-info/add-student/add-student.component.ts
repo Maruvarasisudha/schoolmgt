@@ -183,11 +183,15 @@ stand: Stand[] = [
       dormitory :['',],
       vihiecleno:[''],
       roomno:[''],
+      browse0:[''],
       browse1:[''],
-      browse2:[''],
+      browser2:[''],
+      browser4:[''],
       browse3:[''],
       browse4:[''],
-      browse5:['']
+      browser5:[''],
+      browse5:[''],
+      browse6:['']
      } )
   
   }
