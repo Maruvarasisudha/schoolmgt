@@ -1,7 +1,6 @@
-<mat-icon>account_balance</mat-icon>
-<section class="login ">
-    <div class="container ">
-        <div class="row d-flex justify-content-center align-items-center ">
+<section class="login">
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
             <div class="col mt-5 my-5">
                 <div class="row g-0">
                     <div class=" col-sm-12 col-md-12 col-lg-6 col-xl-6  color  ">
@@ -22,7 +21,7 @@
                                     <img src="../../assets/Facebook_f_logo_(2019).svg.webp" alt="face"
                                         style="width:28px">
                                 </a>
-                                <a class="mx-2 " 
+                                <a class="mx-2 "
                                     href="https://www.google.com/search?q=google+link&sxsrf=ALiCzsbLrgHbD0RxljLb0JLehTUbJ0YV6g%3A1668241136742&ei=8FZvY_vsLLGWseMPhKSUsAI&ved=0ahUKEwj7pOvCmqj7AhUxS2wGHQQSBSYQ4dUDCA8&uact=5&oq=google+link&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIECCMQJzIQCAAQgAQQhwIQsQMQgwEQFDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBAgAEEM6CggAEEcQ1gQQsAM6BwgAELADEEM6DQgAEOQCENYEELADGAE6EgguEMcBENEDEMgDELADEEMYAjoHCAAQgAQQCkoECE0YAUoECEEYAEoECEYYAVDoBliBFWC5GGgBcAF4AIABaogB0QGSAQMwLjKYAQCgAQHIARHAAQHaAQYIARABGAnaAQYIAhABGAg&sclient=gws-wiz-serp">
                                     <img src="../../assets/6b60d27b-c044-4e11-be81-eafbf415b2b3.jpg" alt="face"
                                         style="width:30px ; background-color: white;">
@@ -32,12 +31,12 @@
                                         style="width: 25px;">
                                 </a>
                             </div>
-                            <form class="mx-1 mx-md-4 mt-5" [formGroup]="loginForm" (ngSubmit)="submit()">
+                            <form class="mx-5 mx-md-4 mt-5" [formGroup]="loginForm" (ngSubmit)="submit()">
                                 <div class="d-flex flex-row align-items-center mb-4">
                                     <div class="form-outline flex-fill mb-0">
-                                        <span><img src="../../assets/user-circle-solid-24.png"></span>
+                                        <span class="ms-5"><img src="../../assets/user-circle-solid-24.png"></span>
                                         <label class="form-label ms-2" style="color:rgb(107, 106, 106) "><b>User Name</b><sup style="color:rgb(207, 14, 14);font-size: 17px;">*</sup></label>
-                                        <div class="in_single_input input ">
+                                        <div class="in_single_input input ms-5">
                                             <input type="userName" formControlName="userName" class="form-control"
                                                 placeholder="Enter your userName" required
                                                 [ngClass]="{ 'is-invalid': Submitted && f['userName'].errors || f['userName'].touched&& f['userName'].errors} " />
@@ -51,15 +50,15 @@
                                 </div>
                                 <div class="d-flex flex-row align-items-center mb-4">
                                     <div class="form-outline flex-fill mb-0">
-                                        <span><img src="../../assets/key-solid-24.png"></span>
+                                        <span class="ms-5"><img src="../../assets/key-solid-24.png"></span>
                                         <label class="form-label ms-2" style="color:rgb(107, 106, 106)"><b>Password</b><sup style="color:rgb(207, 14, 14);font-size: 18px;">*</sup></label>
-                                        <div class="in_single_input input ">
+                                        <div class="in_single_input input ms-5 ">
                                             <input type="password" formControlName="password" class="form-control"
                                                 placeholder="Enter your password" required
                                                 [ngClass]="{ 'is-invalid': Submitted && f['password'].errors || f['password'].touched&& f['password'].errors} " />
                                             <div *ngIf="Submitted && f['password'].errors|| f['password'].touched&& f['password'].errors"
                                                 class="invalid-feedback">
-                                                <div *ngIf="f['password'].errors['required']"> Password is required
+                                                <div *ngIf="f['password'].errors['required']"> Password is requires
                                                 </div>
                                             </div>
                                         </div>

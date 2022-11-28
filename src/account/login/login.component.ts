@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       console.log(JSON.parse(localStorage.getItem('currentUser') || '{}'))
       localStorage.setItem('token', res.data.jwt);
       console.log(localStorage.getItem('token'))
-      this.router.navigate(['/pages/navbars']);
+      this.router.navigate(['/pages/dashboard']);
 
     })
   }

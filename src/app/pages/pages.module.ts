@@ -7,22 +7,31 @@ import { LayoutModule } from 'src/layout/layout.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentInfoModule } from './student-info/student-info.module';
 import { MaterialModule } from '../material/material.module';
+// import { SidebarComponent } from 'src/layout/sidebar/sidebar.component';
+import { BodyComponent } from './body/body.component';
+import { AlertModule,SidebarModule } from 'ng-cdbangular';
+import { MainComponent } from './main/main.component';
+
+
 @NgModule({
   declarations: [
-   
-  
-    DashboardComponent
+    DashboardComponent,
+    // NavbarsComponent,
+    // SidebarComponent,
+    BodyComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule,
-    ReactiveFormsModule,
-    LayoutModule,
+     PagesRoutingModule,
+     ReactiveFormsModule,
+     LayoutModule,
     FormsModule,
-    StudentInfoModule,
+    // StudentInfoModule,
     BrowserAnimationsModule,
     MaterialModule,
-    BrowserAnimationsModule,
+    // SidebarModule
+
   ]
 })
 export class PagesModule { }
