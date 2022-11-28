@@ -22,7 +22,7 @@ export class StudentGroupComponent implements AfterViewInit,OnInit {
   public submitted = false;
   paramId: any;
   grouplist: any;
-  groupli:any
+  studentgrouplist:any
   displayedColumns: string[] = ['index','groupName','description', 'action'];
   dataSource = new MatTableDataSource<any>();
 
@@ -76,8 +76,8 @@ export class StudentGroupComponent implements AfterViewInit,OnInit {
       res => {
         console.log(res)
         this.grouplist = res
-        this.groupli =this.grouplist.data
-        this.dataSource = new MatTableDataSource<any>(this.groupli);
+        this.studentgrouplist =this.grouplist.data
+        this.dataSource = new MatTableDataSource<any>(this.studentgrouplist);
     
       })
   }
