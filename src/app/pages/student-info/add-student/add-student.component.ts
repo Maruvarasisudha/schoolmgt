@@ -186,7 +186,6 @@ stand: Stand[] = [
       dormitoryName :['',],
       vehicleNo:[''],
       roomno:[''],
-      
       bankName:[''],
       birthCertificateNo:[],
       bankAccountNo:[],
