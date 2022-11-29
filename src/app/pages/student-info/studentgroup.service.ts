@@ -12,8 +12,9 @@ export class StudentgroupService {
   private studentgroupget= this.baseurl +'/api/group/getAll/group'
   private studentgroupupdate= this.baseurl +'/api/group/update/group'
   private studentgroupdelete= this.baseurl +'/api/group/delete/group/{id}'
+  private studentgroupedit= this.baseurl +'/api/group/get/group/{id}'
   constructor(private http:HttpClient) { }
-  studentgroup(data:any){
+  studentgroupcreate(data:any){
     return this.http.post<any>(this.studentgrouppost, data);
   }
   getstudentgroup(){
@@ -23,8 +24,10 @@ export class StudentgroupService {
     return this.http.put<any>(this.studentgroupupdate+ '/' + id, data);
   }
  
-  deleteData(id: any) {
-    return this.http.delete<any>(this.studentgroupdelete + '/' + id);
+  deletestudentgroup(id: any) {
+    return this.http.put<any>(this.studentgroupdelete + '/' + id,id);
   }
-  
+  public editstudentgroup(id: any) {
+    return this.http.get<any>(this.studentgroupedit + '/' + id);
+  }
 }

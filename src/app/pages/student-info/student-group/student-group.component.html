@@ -45,7 +45,8 @@
                     <td mat-cell *matCellDef="let element"> {{element.description}} </td>
                 </ng-container>
                 <ng-container matColumnDef="action">
-                    <th mat-header-cell *matHeaderCellDef>Actions</th>                   
+                    <th mat-header-cell *matHeaderCellDef>Actions</th>  
+                   
                     <td mat-cell *matCellDef="let row">                      
                         <button class="butt" mat-button [matMenuTriggerFor]="menu">
                             <mat-icon>more_vert</mat-icon>
@@ -67,8 +68,8 @@
                             </div>
                             <div class="row ps-1">
                                 <div class="col-1">
-                                    <mat-cell *matCellDef="let element" (click)="reject(element.id)"> <button mat-icon-button
-                                             color="warn"  class="iconbutton">
+                                    <mat-cell *matCellDef="let element" > <button mat-icon-button
+                                             color="warn"  class="iconbutton" (click)="reject(element.id)">
                                             <mat-icon>delete</mat-icon>
                                         </button></mat-cell>
                                 </div>
@@ -116,3 +117,4 @@
         </div>
     </div>
 </div>
+

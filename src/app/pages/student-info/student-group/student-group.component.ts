@@ -7,7 +7,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 export interface PeriodicElement {
-  
+
 }
 const ELEMENT_DATA: PeriodicElement[] = [
 ];
@@ -17,13 +17,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './student-group.component.html',
   styleUrls: ['./student-group.component.scss']
 })
-export class StudentGroupComponent implements AfterViewInit,OnInit {
+export class StudentGroupComponent implements AfterViewInit, OnInit {
   groupform!: FormGroup;
   public submitted = false;
   paramId: any;
   grouplist: any;
-  studentgrouplist:any
-  displayedColumns: string[] = ['index','groupName','description', 'action'];
+  studentgrouplist: any
+  obj : any={}
+  displayedColumns: string[] = ['index', 'groupName', 'description', 'action'];
   dataSource = new MatTableDataSource<any>();
 
 
@@ -39,7 +40,7 @@ export class StudentGroupComponent implements AfterViewInit,OnInit {
       groupName: ['', Validators.required],
       description: [''],
     });
-   
+
   }
 
   ngOnInit(): void {
@@ -63,35 +64,51 @@ export class StudentGroupComponent implements AfterViewInit,OnInit {
       return;
     }
     console.log(this.groupform.value);
-    
-    this.studentgroup.studentgroup(this.groupform.value).subscribe(
-      res => {
-        console.log(res)
-      })
-      
+    if (this.paramId) {
+      this.groupform.value.id = this.paramId
+      this.studentgroup.updatestudentgroup(this.groupform.value, this.paramId).subscribe(
+        res => {
+          console.log(res)
+          this.router.navigate(['/student-group']);
+        })
+    } else {
+      this.studentgroup.studentgroupcreate(this.groupform.value).subscribe(
+        res => {
+          console.log(res)
+        })
+    }
+
   }
   get() {
     this.studentgroup.getstudentgroup().subscribe(
       res => {
         console.log(res)
         this.grouplist = res
-        this.studentgrouplist =this.grouplist.data
+        this.studentgrouplist = this.grouplist.data
         this.dataSource = new MatTableDataSource<any>(this.studentgrouplist);
         this.dataSource.paginator = this.paginator;
 
       })
   }
-  reject(id:any){
+  reject(id: any) {
     alert("data is deleted")
-    this.studentgroup.deleteData(id).subscribe(
+    this.studentgroup.deletestudentgroup(id).subscribe(
       res => {
         this.get()
-      
+
       })
-    
   }
-  
-  
+  getId() {
+    this.studentgroup.editstudentgroup(this.paramId).subscribe(
+      res => {
+        console.log(res)
+        this.obj = res
+        console.log(this.obj)
+
+      })
+  }
+
+
 }
 // }
 
