@@ -91,24 +91,24 @@ export class AddStudentComponent implements OnInit {
   //     this.fileAttr = 'Choose File';
   //   }
   // }
-  routelist:routelist[]= [
+  routeList= [
     { value: 'TRANSPORT ROUTE 11-0', viewValue: 'TRANSPORT ROUTE 11' },
     { value: 'TRANSPORT ROUTE 15-1', viewValue: 'TRANSPORT ROUTE 15' },
     { value: 'TRANSPORT ROUTE 21-2', viewValue: 'TRANSPORT ROUTE 21' },
 
   ];
-  vihiecleno :vihiecleno[]= [
+  vehicleNo = [
     { value: 'TN4914-0', viewValue: 'TN4914' },
     { value: 'TN4917-1', viewValue: 'TN4917' },
     
   ];
-  dormitory :dormitory[]= [
+  dormitoryName = [
     { value: '1-st class-0', viewValue: 'SIR ISAAC NEWTON HOSTEL' },
     { value: '2-nd class-1', viewValue: 'LOUSIS PASTEUR  HOSTEL' },
     { value: 'GARLILEEO HOSTEL-2', viewValue: 'GARLILEEO HOSTEL' },
 
   ];
-  roomno:roomno[]= [
+  roomNo= [
     { value: 'ROOM NO-124-0', viewValue: 'ROOM NO-124' },
     
 
@@ -173,7 +173,7 @@ stand: Stand[] = [
   ngOnInit(): void {
     this.studentForm = this.fb.group ({
     class: ['', Validators.required],
-      section: ['', Validators.required],
+    
       firstName:['', Validators.required],
       gender:['', Validators.required],
       dateOfBirth:['', Validators.required],
@@ -182,24 +182,47 @@ stand: Stand[] = [
       Category:[''],
       academicYearId:['',Validators.required],
       guardianno:['',Validators.required],
-      routelist:['', ],
-      dormitory :['',],
-      vihiecleno:[''],
+      routeList:['', ],
+      dormitoryName :['',],
+      vehicleNo:[''],
       roomno:[''],
-      browse0:[''],
-      browssss:[''],
-      browser2:[''],
-      browser4:[''],
-      browse3:[''],
-      browse4:[''],
-      browser5:[''],
-      browse5:[''],
-      browse6:[''],
-      browser7:['']
+      
+      bankName:[''],
+      birthCertificateNo:[],
+      bankAccountNo:[],
+      casteId:[''],
+      emailAddress:[''],
+      fatherName:[''],
+      fatherOccupation:[''],
+      fatherPhoneNo:[''],
+      fatherPhoto:[''],
+      guardianAddress:[''],
+      guardianEmail:[''],
+      guardianOccupation:[''],
+      guardianPhone:[''],
+      guardianPhoto:[''],
+      gurdianName:[''],
+      height:[''],
+      id:[''],
+      lastName:[''],
+      motherName:[''],
+      motherOccupation:[''],
+      motherPhoneNo:[''],
+      motherPhoto:[''],
+      weight:[''],
+      photoFileName:[''],
+      previousSchoolDetails:[''],
+      relationwithGuardian:[''],
+      rollNumber:[''],
+      roomNo:[''],
+      sectionId:['',Validators.required],
+      stuAddressLine1:['',],
+      stuAddressLine2:['',],
+      nationalIdNo:['']
      } )
   
   }
-  
+ 
 
   get f(): { [key: string]: AbstractControl } {
     return this.studentForm.controls;
@@ -212,7 +235,7 @@ if( this.studentForm.invalid){
 return;
 }
 else{
-  this.service.createstudent(this.studentForm.value).subscribe((res) => {
+  this.service.createstudent(this.studentForm.value).subscribe((_res) => {
     
   });
 }

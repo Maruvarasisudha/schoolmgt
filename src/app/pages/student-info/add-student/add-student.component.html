@@ -5,7 +5,8 @@
                 <h4 class="text-start last"><b class="margin">STUDENT ADMISSION</b></h4>
             </div>
 
-            <div class="col-sm-12 col-md-8 col-lg-6 " id="last">Dashboard | Student Information | <b>Student List</b></div>
+            <div class="col-sm-12 col-md-8 col-lg-6 " id="last">Dashboard | Student Information | <b>Student List</b>
+            </div>
 
         </div>
     </div>
@@ -51,8 +52,8 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-2">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">section </mat-label>
-                        <mat-select formControlName="section" [(ngModel)]="obj.section" required
-                            [ngClass]="{ 'is-invalid': Submitted && f['section'].errors || f['section'].touched&& f['section'].errors }">
+                        <mat-select formControlName="sectionId" [(ngModel)]="obj.sectionId" required
+                            [ngClass]="{ 'is-invalid': Submitted && f['sectionId'].errors || f['sectionId'].touched&& f['sectionId'].errors }">
                             <mat-option>select section</mat-option>
                             <mat-option *ngFor="let sec of sec" [value]="sec.value">
                                 {{sec.viewValue}}
@@ -60,7 +61,7 @@
 
                         </mat-select>
                         <mat-error
-                            *ngIf="Submitted && f['section'].errors|| f['section'].touched&& f['section'].errors">
+                            *ngIf="Submitted && f['sectionId'].errors|| f['sectionId'].touched&& f['sectionId'].errors">
                             Please select a section</mat-error>
                         <mat-hint></mat-hint>
                     </mat-form-field>
@@ -69,7 +70,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-4">
                     <mat-form-field class="example-full-width">
                         <mat-label class="info">Roll Number</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="rollNumber" [(ngModel)]="obj.rollNumber">
                     </mat-form-field>
                 </div>
             </div>
@@ -87,8 +88,8 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-4 ">
                     <mat-form-field class="example-full-width">
-                        <mat-label class="info"> Last Name</mat-label>
-                        <input matInput>
+                        <mat-label class="info" > Last Name</mat-label>
+                        <input matInput formControlName="lastName" [(ngModel)]="obj.lastName">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-2 ">
@@ -108,7 +109,8 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 mt-4 ">
                     <mat-form-field>
-                        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" [(ngModel)]="obj.dateOfBirth" required
+                        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth"
+                            [(ngModel)]="obj.dateOfBirth" required
                             [ngClass]="{ 'is-invalid': Submitted && f['dateOfBirth'].errors || f['dateOfBirth'].touched&& f['dateOfBirth'].errors }">
                         <mat-label class="info"> Date of Birth</mat-label>
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -119,7 +121,8 @@
                             </mat-datepicker-actions>
 
                         </mat-datepicker>
-                        <mat-error *ngIf="Submitted && f['dateOfBirth'].errors|| f['dateOfBirth'].touched&& f['dateOfBirth'].errors">
+                        <mat-error
+                            *ngIf="Submitted && f['dateOfBirth'].errors|| f['dateOfBirth'].touched&& f['dateOfBirth'].errors">
                             Please select Your date of birth</mat-error>
                     </mat-form-field>
                 </div>
@@ -154,14 +157,14 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">cast</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="casteId" [(ngModel)]="obj.casteId">
 
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">Email</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="emailAddress" [(ngModel)]="obj. emailAddress">
                     </mat-form-field>
                 </div>
             </div>
@@ -203,13 +206,13 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">Height(IN)</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="height" [(ngModel)]="obj.height">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
-                        <mat-label class="info">weight(KG)</mat-label>
-                        <input matInput>
+                        <mat-label class="info" >weight(KG)</mat-label>
+                        <input matInput formControlName="weight" [(ngModel)]="obj.weight">
                     </mat-form-field>
                 </div>
             </div>
@@ -217,14 +220,15 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">AcademicYear</mat-label>
-                        <mat-select formControlName="academicYearId" [(ngModel)]="obj.academicYearId"   required
-                        [ngClass]="{ 'is-invalid': Submitted && f['academicYearId'].errors || f['academicYearId'].touched&& f['academicYearId'].errors }">
+                        <mat-select formControlName="academicYearId" [(ngModel)]="obj.academicYearId" required
+                            [ngClass]="{ 'is-invalid': Submitted && f['academicYearId'].errors || f['academicYearId'].touched&& f['academicYearId'].errors }">
                             <mat-option>AcademicYear</mat-option>
                             <mat-option *ngFor="let academicYearId of academicYearId" [value]="academicYearId.value">
                                 {{academicYearId.viewValue}}
                             </mat-option>
                         </mat-select>
-                        <mat-error *ngIf="Submitted && f['academicYearId'].errors|| f['academicYearId'].touched&& f['academicYearId'].errors">
+                        <mat-error
+                            *ngIf="Submitted && f['academicYearId'].errors|| f['academicYearId'].touched&& f['academicYearId'].errors">
                             Please select a Year</mat-error>
                     </mat-form-field>
                 </div>
@@ -254,7 +258,7 @@
 
                     <div class="input-group custom-file-button mt-4">
 
-                        <input type="file" class="form-control" id="inputGroupFile" formControlName="browse0"
+                        <input type="file" class="form-control" id="inputGroupFile" formControlName="photoFileName"  [(ngModel)]="obj.photoFileName"
                             style="border:1px solid gray;border-radius: 50px;">
 
                         <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
@@ -262,51 +266,51 @@
 
                     </div>
                 </div>
-                
-                  
-                  
-                
+
+
+
+
 
             </div>
             <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <p class="last mt-4 fs-6">PARENTS & GUARDIAN INFO</p></div>
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 text-end">
-                
-                    <button class="btn last3 fs-6 text-white  rounded-pill" type="button"
-                    (click)="openDialog()"> + ADD PARENTS
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <p class="last mt-4 fs-6">PARENTS & GUARDIAN INFO</p>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 text-end">
+
+                    <button class="btn last3 fs-6 text-white  rounded-pill" type="button" (click)="openDialog()"> + ADD
+                        PARENTS
                     </button>
-                
-            </div>
+
+                </div>
             </div>
             <hr>
-                
-           
+
+
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
-                        <mat-label class="info">Father Name</mat-label>
-                        <input matInput>
+                        <mat-label>Father Name</mat-label>
+                        <input matInput class="info" formControlName="fatherName" [(ngModel)]="obj.fatherName">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">Occupation</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="fatherOccupation" [(ngModel)]="obj.fatherOccupation">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">Father Phone</mat-label>
-                        <input matInput>
+                        <input matInput  formControlName="fatherPhoneNo" [(ngModel)]="obj.fatherPhoneNo">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <div class="input-group custom-file-button mt-4">
-                        <input type="file" class="form-control" id="inputType" formControlName="browssss"
+                        <input type="file" class="form-control" id="inputType" formControlName="fatherPhoto" [(ngModel)]="obj.fatherPhoto"
                             style="border:1px solid gray;border-radius: 50px;">
-                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
-                ">Browse</label>
+                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));">Browse</label>
 
                     </div>
                 </div>
@@ -314,28 +318,27 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
-                        <mat-label class="info">Mother Name</mat-label>
-                        <input matInput>
+                        <mat-label class="info" >Mother Name</mat-label>
+                        <input matInput formControlName="motherName" [(ngModel)]="obj.motherName">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
-                        <mat-label class="info">Occupation</mat-label>
-                        <input matInput>
+                        <mat-label class="info" >Occupation</mat-label>
+                        <input matInput  formControlName="motherOccupation"  [(ngModel)]="obj.motherOccupation">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">Mother Phone</mat-label>
-                        <input matInput>
+                        <input matInput  formControlName="motherPhoneNo"  [(ngModel)]="obj.motherPhoneNo">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <div class="input-group custom-file-button mt-4">
-                        <input type="file" class="form-control" id="inputType" formControlName="browser5"
+                        <input type="file" class="form-control" id="inputType"  formControlName="motherPhoto"  [(ngModel)]="obj.motherPhoto"
                             style="border:1px solid gray;border-radius: 50px;">
-                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
-                ">Browse</label>
+                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));">Browse</label>
 
                     </div>
                 </div>
@@ -359,39 +362,40 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info"> Guardian Name</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="gurdianName" [(ngModel)]="obj.gurdianName">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">Relation With Guardian</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="relationwithGuardian" [(ngModel)]="obj.relationwithGuardian">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
-                        <mat-label class="info">Guardian Email</mat-label>
-                        <input matInput>
+                        <mat-label class="info">Guardian
+                            Email</mat-label>
+                        <input matInput  class="info" formControlName="guardianEmail" [(ngModel)]="obj.guardianEmail">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <div class="input-group custom-file-button mt-4">
-                        <input type="file" class="form-control"  id="inputType" formControlName="browser7"
+                        <input type="file" class="form-control" id="inputType" formControlName="guardianPhoto" [(ngModel)]="obj.guardianPhoto"
                             style="border:1px solid gray;border-radius: 50px;">
                         <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
                 " for="inputGroupFile">Browse</label>
 
                     </div>
                 </div>
-
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info"> Guardian Phone</mat-label>
-                        <input matInput  formControlName="guardianno" [(ngModel)]="obj. guardianno" required
-                        [ngClass]="{ 'is-invalid': Submitted && f['guardianno'].errors || f['guardianno'].touched&& f['guardianno'].errors }">
-                        <mat-error *ngIf="Submitted && f['guardianno'].errors|| f['guardianno'].touched&& f['guardianno'].errors">
+                        <input matInput formControlName="guardianPhone" [(ngModel)]="obj. guardianPhone" required
+                            [ngClass]="{ 'is-invalid': Submitted && f['guardianPhone'].errors || f['guardianPhone'].touched&& f['guardianPhone'].errors }">
+                        <mat-error
+                            *ngIf="Submitted && f['guardianPhone'].errors|| f['guardianPhone'].touched&& f['guardianPhone'].errors">
                             Please Enter valid Phonenumber</mat-error>
                     </mat-form-field>
 
@@ -399,87 +403,87 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">Guardian Occupation</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="guardianOccupation" [(ngModel)]="obj.guardianOccupation">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">Guardian Address</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="guardianAddress" [(ngModel)]="obj. guardianAddress">
                     </mat-form-field>
                 </div>
             </div>
             <p class="last mt-4 fs-6">STUDENT ADDRESS INFO</p>
             <hr>
             <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                <mat-form-field appearance="standard">
-                    <mat-label class="info">Current Address</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                <mat-form-field appearance="standard">
-                    <mat-label class="info">Permanent Address</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Current Address</mat-label>
+                        <input matInput formControlName="stuAddressLine1" [(ngModel)]="obj.stuAddressLine1">
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">Permanent Address</mat-label>
+                        <input matInput formControlName="stuAddressLine1" [(ngModel)]="obj.stuAddressLine1">
+                    </mat-form-field>
+                </div>
             </div>
             <p class="last mt-4 fs-6">TRANSPORT</p>
             <hr>
             <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                <mat-form-field appearance="standard">
-                    <mat-label class="info">ROUTE LIST</mat-label>
-                    <mat-select formControlName="routelist" [(ngModel)]="obj.routelist">
-                        <mat-option>ROUTE LIST</mat-option>
-                        <mat-option *ngFor="let routelist of routelist" [value]="routelist.value">
-                            {{ routelist.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-hint></mat-hint>
-                </mat-form-field>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                <mat-form-field appearance="standard">
-                    <mat-label class="info">VEHICLE NUMBER</mat-label>
-                    <mat-select formControlName="vihiecleno" [(ngModel)]="obj.vihiecleno">
-                        <mat-option>VEHICLE NUMBER</mat-option>
-                        <mat-option *ngFor="let vihiecleno of vihiecleno" [value]="vihiecleno.value">
-                            {{vihiecleno.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-hint></mat-hint>
-                </mat-form-field>
-            </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">ROUTE LIST</mat-label>
+                        <mat-select formControlName="routeList" [(ngModel)]="obj.routeList">
+                            <mat-option>ROUTE LIST</mat-option>
+                            <mat-option *ngFor="let  routeList of routeList" [value]="routeList.value">
+                                {{ routeList.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">VEHICLE NUMBER</mat-label>
+                        <mat-select formControlName="vehicleNo" [(ngModel)]="obj.vehicleNo">
+                            <mat-option>VEHICLE NUMBER</mat-option>
+                            <mat-option *ngFor="let vehicleNo of vehicleNo" [value]="vehicleNo.value">
+                                {{vehicleNo.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                </div>
             </div>
             <p class="last mt-4 fs-6">OTHER INFO</p>
             <hr>
             <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                <mat-form-field appearance="standard">
-                    <mat-label class="info">DORMITORY NAME</mat-label>
-                    <mat-select formControlName="dormitory" [(ngModel)]="obj.dormitory">
-                        <mat-option>DORMITORY NAME</mat-option>
-                        <mat-option *ngFor="let dormitory of dormitory" [value]="dormitory.value">
-                            {{dormitory.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-hint></mat-hint>
-                </mat-form-field>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                <mat-form-field appearance="standard">
-                    <mat-label class="info">ROOM NUMBER</mat-label>
-                    <mat-select formControlName="roomno" [(ngModel)]="obj.roomno">
-                        <mat-option>ROOM NUMBER</mat-option>
-                        <mat-option *ngFor="let roomno of roomno" [value]="roomno.value">
-                            {{roomno.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-hint></mat-hint>
-                </mat-form-field>
-            </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">DORMITORY NAME</mat-label>
+                        <mat-select formControlName="dormitoryName" [(ngModel)]="obj.dormitoryName">
+                            <mat-option>DORMITORY NAME</mat-option>
+                            <mat-option *ngFor="let dormitoryName of dormitoryName" [value]="dormitoryName.value">
+                                {{dormitoryName.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">ROOM NUMBER</mat-label>
+                        <mat-select formControlName="roomNo" [(ngModel)]="obj.roomNo">
+                            <mat-option>ROOM NUMBER</mat-option>
+                            <mat-option *ngFor="let  roomNo of roomNo" [value]=" roomNo.value">
+                                {{ roomNo.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                </div>
             </div>
             <p class="last mt-4 fs-6">OTHER INFO</p>
 
@@ -488,112 +492,109 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">NATIONAL NUMBER</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="nationalIdNo" [(ngModel)]="obj.nationalIdNo">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
-                        <mat-label class="info">BIRTH CERTIFICATE NUMBER</mat-label>
-                        <input matInput>
+                        <mat-label class="info" >BIRTH CERTIFICATE NUMBER</mat-label>
+                        <input matInput  formControlName="birthCertificateNo" [(ngModel)]="obj.birthCertificateNo">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
-                        <mat-label class="info">BANK ACCOUNT NUMBER</mat-label>
-                        <input matInput>
+                        <mat-label class="info" >BANK ACCOUNT NUMBER</mat-label>
+                        <input matInput  formControlName="bankAccountNo" [(ngModel)]="obj.bankAccountNo">
                     </mat-form-field>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
                     <mat-form-field appearance="standard">
                         <mat-label class="info">BANKNAME</mat-label>
+                        <input matInput   formControlName="bankName" [(ngModel)]="obj.bankName">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">PREVIOUS SCHOOL DETAILS</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">ADDITIONAL NOTES</mat-label>
                         <input matInput>
                     </mat-form-field>
                 </div>
             </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                        <mat-form-field appearance="standard">
-                            <mat-label class="info">PREVIOUS SCHOOL DETAILS</mat-label>
-                            <input matInput>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                        <mat-form-field appearance="standard">
-                            <mat-label class="info">ADDITIONAL NOTES</mat-label>
-                            <input matInput>
-                        </mat-form-field>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">DOCUMENT 01 TITLE</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">DOCUMENT 02 TITLE</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">DOCUMENT 03 TITLE</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <mat-form-field appearance="standard">
+                        <mat-label class="info">DOCUMENT 04 TITLE</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <div class="input-group custom-file-button mt-4">
+                        <input type="file" class="form-control" id="inputType" 
+                            style="border:1px solid gray;border-radius: 50px;">
+                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                    " for="inputGroupFile">Browse</label>
+
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                        <mat-form-field appearance="standard">
-                            <mat-label class="info">DOCUMENT 01 TITLE</mat-label>
-                            <input matInput>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                        <mat-form-field appearance="standard">
-                            <mat-label class="info">DOCUMENT 02 TITLE</mat-label>
-                            <input matInput>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                        <mat-form-field appearance="standard">
-                            <mat-label class="info">DOCUMENT 03 TITLE</mat-label>
-                            <input matInput>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                        <mat-form-field appearance="standard">
-                            <mat-label class="info">DOCUMENT 04 TITLE</mat-label>
-                            <input matInput>
-                        </mat-form-field>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <div class="input-group custom-file-button mt-4">
+                        <input type="file" class="form-control" id="inputType" 
+                            style="border:1px solid gray;border-radius: 50px;">
+                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                    " for="inputGroupFile">Browse</label>
+
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                        <div class="input-group custom-file-button mt-4">
-                            <input type="file" class="form-control" id="inputType"  formControlName="browse3"
-                                style="border:1px solid gray;border-radius: 50px;">
-                            <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <div class="input-group custom-file-button mt-4">
+                        <input type="file" class="form-control" id="inputType" 
+                            style="border:1px solid gray;border-radius: 50px;">
+                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
                     " for="inputGroupFile">Browse</label>
-    
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                        <div class="input-group custom-file-button mt-4">
-                            <input type="file" class="form-control" id="inputType"  formControlName="browse4"
-                                style="border:1px solid gray;border-radius: 50px;">
-                            <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
-                    " for="inputGroupFile">Browse</label>
-    
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                        <div class="input-group custom-file-button mt-4">
-                            <input type="file" class="form-control" id="inputType"  formControlName="browse5"
-                                style="border:1px solid gray;border-radius: 50px;">
-                            <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
-                    " for="inputGroupFile">Browse</label>
-    
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
-                        <div class="input-group custom-file-button mt-4">
-                            <input type="file" class="form-control" id="inputType"  formControlName="browse6"
-                                style="border:1px solid gray;border-radius: 50px;">
-                            <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
-                    " for="inputGroupFile">Browse</label>
-    
-                        </div>
+
                     </div>
                 </div>
-            
-           
-           
-                <div class="d-grid gap-2 px-4 mt-5 d-md-flex justify-content-md-center">
-                    <button type="save" class="btn last3 text-white px-5 fw-bold pt-2 pb-2" type="button ">SAVE</button>
-                
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3">
+                    <div class="input-group custom-file-button mt-4">
+                        <input type="file" class="form-control" id="inputType" 
+                            style="border:1px solid gray;border-radius: 50px;">
+                        <label class="input-group-text text-white" style="border:2px  ;border-radius: 50px; background-image: linear-gradient(rgb(126, 43, 126),rgb(186, 73, 157));
+                    " for="inputGroupFile">Browse</label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2 px-4 mt-5 d-md-flex justify-content-md-center">
+                <button type="save" class="btn last3 text-white px-5 fw-bold pt-2 pb-2" type="button ">SAVE</button>
+
             </div>
         </form>
 
